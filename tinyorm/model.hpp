@@ -205,12 +205,6 @@ namespace orm {
 	}
 
 	template<typename T>
-	auto getMetadatas()
-	{
-
-	}
-
-	template<typename T>
 	Model<T>::Model(SqlConn&& _conn, bool mode): conn(std::move(_conn)), status(INIT)
 	{
 		conn.setAutocommit(mode);
@@ -471,11 +465,12 @@ namespace orm {
 	int Model<T>::First(T& t)
 	{
 		Statement stmt = prepareQuery(1);
+		std::vector<std::string> fieldNames = stmt.fieldNames();
 		ResultSet rs = stmt.executeQuery();
 		if (!rs.isValid() || !rs.hasNext())
 			return 0;
 		rs.next();
-		fillObject(t, rs);
+		fillObject(t, rs, fieldNames);
 		reset();
 		return 1;
 	}

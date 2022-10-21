@@ -32,7 +32,7 @@ namespace orm {
 		const std::string& _username, const std::string& _password,
 		const std::string& _db) : host(_host), port(_port), username(_username), password(_password), db(_db)
 	{
-		autoCommit = false;
+		autoCommit = true;
 		pool = ConnectionPool::getInstance();
 		pool->configure(host, username, password, port, db, 10, 1000, 5);
 	}
