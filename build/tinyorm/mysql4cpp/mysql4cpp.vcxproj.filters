@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="F:\source\repos\cmake-learn\TinyOrm\tinyorm\mysql4cpp\common.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\source\repos\cmake-learn\TinyOrm\tinyorm\mysql4cpp\connectionpool.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\source\repos\cmake-learn\TinyOrm\tinyorm\mysql4cpp\database.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\source\repos\cmake-learn\TinyOrm\tinyorm\mysql4cpp\preparedresult.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\source\repos\cmake-learn\TinyOrm\tinyorm\mysql4cpp\result.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\source\repos\cmake-learn\TinyOrm\tinyorm\mysql4cpp\sqlconn.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\source\repos\cmake-learn\TinyOrm\tinyorm\mysql4cpp\sqlresult.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\source\repos\cmake-learn\TinyOrm\tinyorm\mysql4cpp\statement.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\source\repos\cmake-learn\TinyOrm\tinyorm\mysql4cpp\timestamp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="F:\source\repos\cmake-learn\TinyOrm\tinyorm\mysql4cpp\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{A7AD8DAE-C3FD-38A3-93DB-CE2A94C616A1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

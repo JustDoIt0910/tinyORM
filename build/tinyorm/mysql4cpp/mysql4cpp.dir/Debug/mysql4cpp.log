@@ -1,0 +1,27 @@
+﻿  Building Custom Rule F:/source/repos/cmake-learn/TinyOrm/tinyorm/mysql4cpp/CMakeLists.txt
+  common.cpp
+F:\source\repos\cmake-learn\TinyOrm\tinyorm\mysql4cpp\common.cpp(8,24): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  connectionpool.cpp
+F:\source\repos\cmake-learn\TinyOrm\tinyorm\mysql4cpp\connectionpool.cpp(38,61): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+F:\source\repos\cmake-learn\TinyOrm\tinyorm\mysql4cpp\connectionpool.cpp(42,58): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+  database.cpp
+  preparedresult.cpp
+  result.cpp
+  sqlconn.cpp
+F:\source\repos\cmake-learn\TinyOrm\tinyorm\mysql4cpp\sqlconn.cpp(79,55): warning C4267: “参数”: 从“size_t”转换到“unsigned long”，可能丢失数据
+F:\source\repos\cmake-learn\TinyOrm\tinyorm\mysql4cpp\sqlconn.cpp(88,55): warning C4267: “参数”: 从“size_t”转换到“unsigned long”，可能丢失数据
+F:\source\repos\cmake-learn\TinyOrm\tinyorm\mysql4cpp\sqlconn.cpp(116,64): warning C4267: “参数”: 从“size_t”转换到“unsigned long”，可能丢失数据
+F:\source\repos\cmake-learn\TinyOrm\tinyorm\mysql4cpp\sqlconn.cpp(121,20): warning C4101: “e”: 未引用的局部变量
+  sqlresult.cpp
+F:\source\repos\cmake-learn\TinyOrm\tinyorm\mysql4cpp\sqlresult.cpp(38,29): warning C4018: “<”: 有符号/无符号不匹配
+  statement.cpp
+F:\source\repos\cmake-learn\TinyOrm\tinyorm\mysql4cpp\statement.cpp(14,5): warning C4267: “参数”: 从“size_t”转换到“unsigned long”，可能丢失数据
+F:\source\repos\cmake-learn\TinyOrm\tinyorm\mysql4cpp\statement.cpp(25,20): warning C4018: “<”: 有符号/无符号不匹配
+F:\source\repos\cmake-learn\TinyOrm\tinyorm\mysql4cpp\statement.cpp(187,10): warning C4244: “初始化”: 从“my_ulonglong”转换到“int”，可能丢失数据
+F:\source\repos\cmake-learn\TinyOrm\tinyorm\mysql4cpp\statement.cpp(222,25): warning C4018: “>=”: 有符号/无符号不匹配
+F:\source\repos\cmake-learn\TinyOrm\tinyorm\mysql4cpp\statement.cpp(267,53): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+  timestamp.cpp
+F:\source\repos\cmake-learn\TinyOrm\tinyorm\mysql4cpp\timestamp.cpp(74,59): warning C4244: “+=”: 从“double”转换到“time_t”，可能丢失数据
+F:\source\repos\cmake-learn\TinyOrm\tinyorm\mysql4cpp\timestamp.cpp(108,23): warning C4244: “=”: 从“time_t”转换到“unsigned long”，可能丢失数据
+  正在生成代码...
+  mysql4cpp.vcxproj -> F:\source\repos\cmake-learn\TinyOrm\build\tinyorm\mysql4cpp\Debug\mysql4cpp.lib

@@ -1,0 +1,2 @@
+F:\source\repos\cmake-learn\TinyOrm\build\tinyorm\mysql4cpp\Debug\mysql4cpp.pdb
+F:\source\repos\cmake-learn\TinyOrm\build\tinyorm\mysql4cpp\mysql4cpp.dir\Debug\mysql4cpp.pdb

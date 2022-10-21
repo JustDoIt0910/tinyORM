@@ -1,0 +1,10 @@
+^F:\SOURCE\REPOS\CMAKE-LEARN\TINYORM\BUILD\CMAKEFILES\D897D7C1D2E0FAE88D12BE31BC061C8B\GENERATE.STAMP.RULE
+setlocal
+E:\CMake\bin\cmake.exe -SF:/source/repos/cmake-learn/TinyOrm -BF:/source/repos/cmake-learn/TinyOrm/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file F:/source/repos/cmake-learn/TinyOrm/build/tinyorm_example.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

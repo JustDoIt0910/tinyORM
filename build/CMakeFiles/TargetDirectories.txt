@@ -1,0 +1,5 @@
+F:/source/repos/cmake-learn/TinyOrm/build/CMakeFiles/example.dir
+F:/source/repos/cmake-learn/TinyOrm/build/CMakeFiles/ALL_BUILD.dir
+F:/source/repos/cmake-learn/TinyOrm/build/CMakeFiles/ZERO_CHECK.dir
+F:/source/repos/cmake-learn/TinyOrm/build/tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir
+F:/source/repos/cmake-learn/TinyOrm/build/tinyorm/mysql4cpp/CMakeFiles/ALL_BUILD.dir

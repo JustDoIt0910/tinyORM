@@ -1,0 +1,336 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{DA9A3D1E-3D82-3D6E-892C-A877E668822D}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>x64</Platform>
+    <ProjectName>example</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">F:\source\repos\cmake-learn\TinyOrm\build\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">example.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">example</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">F:\source\repos\cmake-learn\TinyOrm\build\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">example.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">example</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">F:\source\repos\cmake-learn\TinyOrm\build\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">example.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">example</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">F:\source\repos\cmake-learn\TinyOrm\build\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">example.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">example</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>F:\source\repos\cmake-learn\TinyOrm;F:\source\repos\cmake-learn\TinyOrm\tinyorm\mysql4cpp\mysql\include;F:\source\repos\cmake-learn\TinyOrm\tinyorm\mysql4cpp\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>F:\source\repos\cmake-learn\TinyOrm;F:\source\repos\cmake-learn\TinyOrm\tinyorm\mysql4cpp\mysql\include;F:\source\repos\cmake-learn\TinyOrm\tinyorm\mysql4cpp\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>F:\source\repos\cmake-learn\TinyOrm;F:\source\repos\cmake-learn\TinyOrm\tinyorm\mysql4cpp\mysql\include;F:\source\repos\cmake-learn\TinyOrm\tinyorm\mysql4cpp\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>libmysql.lib;spdlogd.lib;tinyorm\mysql4cpp\Debug\mysql4cpp.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>F:/source/repos/cmake-learn/TinyOrm/tinyorm/mysql4cpp/mysql/lib;F:/source/repos/cmake-learn/TinyOrm/tinyorm/mysql4cpp/mysql/lib/$(Configuration);F:/source/repos/cmake-learn/TinyOrm/tinyorm/mysql4cpp/spdlog/lib;F:/source/repos/cmake-learn/TinyOrm/tinyorm/mysql4cpp/spdlog/lib/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>F:/source/repos/cmake-learn/TinyOrm/build/Debug/example.lib</ImportLibrary>
+      <ProgramDataBaseFile>F:/source/repos/cmake-learn/TinyOrm/build/Debug/example.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>F:\source\repos\cmake-learn\TinyOrm;F:\source\repos\cmake-learn\TinyOrm\tinyorm\mysql4cpp\mysql\include;F:\source\repos\cmake-learn\TinyOrm\tinyorm\mysql4cpp\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>F:\source\repos\cmake-learn\TinyOrm;F:\source\repos\cmake-learn\TinyOrm\tinyorm\mysql4cpp\mysql\include;F:\source\repos\cmake-learn\TinyOrm\tinyorm\mysql4cpp\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>F:\source\repos\cmake-learn\TinyOrm;F:\source\repos\cmake-learn\TinyOrm\tinyorm\mysql4cpp\mysql\include;F:\source\repos\cmake-learn\TinyOrm\tinyorm\mysql4cpp\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>libmysql.lib;spdlogd.lib;tinyorm\mysql4cpp\Release\mysql4cpp.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>F:/source/repos/cmake-learn/TinyOrm/tinyorm/mysql4cpp/mysql/lib;F:/source/repos/cmake-learn/TinyOrm/tinyorm/mysql4cpp/mysql/lib/$(Configuration);F:/source/repos/cmake-learn/TinyOrm/tinyorm/mysql4cpp/spdlog/lib;F:/source/repos/cmake-learn/TinyOrm/tinyorm/mysql4cpp/spdlog/lib/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>F:/source/repos/cmake-learn/TinyOrm/build/Release/example.lib</ImportLibrary>
+      <ProgramDataBaseFile>F:/source/repos/cmake-learn/TinyOrm/build/Release/example.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>F:\source\repos\cmake-learn\TinyOrm;F:\source\repos\cmake-learn\TinyOrm\tinyorm\mysql4cpp\mysql\include;F:\source\repos\cmake-learn\TinyOrm\tinyorm\mysql4cpp\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>F:\source\repos\cmake-learn\TinyOrm;F:\source\repos\cmake-learn\TinyOrm\tinyorm\mysql4cpp\mysql\include;F:\source\repos\cmake-learn\TinyOrm\tinyorm\mysql4cpp\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>F:\source\repos\cmake-learn\TinyOrm;F:\source\repos\cmake-learn\TinyOrm\tinyorm\mysql4cpp\mysql\include;F:\source\repos\cmake-learn\TinyOrm\tinyorm\mysql4cpp\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>libmysql.lib;spdlogd.lib;tinyorm\mysql4cpp\MinSizeRel\mysql4cpp.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>F:/source/repos/cmake-learn/TinyOrm/tinyorm/mysql4cpp/mysql/lib;F:/source/repos/cmake-learn/TinyOrm/tinyorm/mysql4cpp/mysql/lib/$(Configuration);F:/source/repos/cmake-learn/TinyOrm/tinyorm/mysql4cpp/spdlog/lib;F:/source/repos/cmake-learn/TinyOrm/tinyorm/mysql4cpp/spdlog/lib/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>F:/source/repos/cmake-learn/TinyOrm/build/MinSizeRel/example.lib</ImportLibrary>
+      <ProgramDataBaseFile>F:/source/repos/cmake-learn/TinyOrm/build/MinSizeRel/example.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>F:\source\repos\cmake-learn\TinyOrm;F:\source\repos\cmake-learn\TinyOrm\tinyorm\mysql4cpp\mysql\include;F:\source\repos\cmake-learn\TinyOrm\tinyorm\mysql4cpp\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>F:\source\repos\cmake-learn\TinyOrm;F:\source\repos\cmake-learn\TinyOrm\tinyorm\mysql4cpp\mysql\include;F:\source\repos\cmake-learn\TinyOrm\tinyorm\mysql4cpp\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>F:\source\repos\cmake-learn\TinyOrm;F:\source\repos\cmake-learn\TinyOrm\tinyorm\mysql4cpp\mysql\include;F:\source\repos\cmake-learn\TinyOrm\tinyorm\mysql4cpp\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>libmysql.lib;spdlogd.lib;tinyorm\mysql4cpp\RelWithDebInfo\mysql4cpp.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>F:/source/repos/cmake-learn/TinyOrm/tinyorm/mysql4cpp/mysql/lib;F:/source/repos/cmake-learn/TinyOrm/tinyorm/mysql4cpp/mysql/lib/$(Configuration);F:/source/repos/cmake-learn/TinyOrm/tinyorm/mysql4cpp/spdlog/lib;F:/source/repos/cmake-learn/TinyOrm/tinyorm/mysql4cpp/spdlog/lib/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>F:/source/repos/cmake-learn/TinyOrm/build/RelWithDebInfo/example.lib</ImportLibrary>
+      <ProgramDataBaseFile>F:/source/repos/cmake-learn/TinyOrm/build/RelWithDebInfo/example.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="F:\source\repos\cmake-learn\TinyOrm\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule F:/source/repos/cmake-learn/TinyOrm/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+E:\CMake\bin\cmake.exe -SF:/source/repos/cmake-learn/TinyOrm -BF:/source/repos/cmake-learn/TinyOrm/build --check-stamp-file F:/source/repos/cmake-learn/TinyOrm/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">E:\CMake\share\cmake-3.21\Modules\CMakeCCompiler.cmake.in;E:\CMake\share\cmake-3.21\Modules\CMakeCCompilerABI.c;E:\CMake\share\cmake-3.21\Modules\CMakeCInformation.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeCXXCompiler.cmake.in;E:\CMake\share\cmake-3.21\Modules\CMakeCXXCompilerABI.cpp;E:\CMake\share\cmake-3.21\Modules\CMakeCXXInformation.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeCommonLanguageInclude.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeCompilerIdDetection.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeDetermineCCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeDetermineCXXCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeDetermineCompileFeatures.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeDetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeDetermineCompilerABI.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeDetermineCompilerId.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeDetermineRCCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeDetermineSystem.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeFindBinUtils.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeGenericSystem.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeInitializeConfigs.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeLanguageInformation.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeParseImplicitIncludeInfo.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeParseImplicitLinkInfo.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeParseLibraryArchitecture.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeRCCompiler.cmake.in;E:\CMake\share\cmake-3.21\Modules\CMakeRCInformation.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeSystem.cmake.in;E:\CMake\share\cmake-3.21\Modules\CMakeSystemSpecificInformation.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeSystemSpecificInitialize.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeTestCCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeTestCXXCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeTestCompilerCommon.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeTestRCCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\ADSP-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\ARMCC-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\ARMClang-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\AppleClang-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\Borland-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\CMakeCommonCompilerMacros.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\Clang-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\Comeau-CXX-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\Cray-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\FujitsuClang-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\GHS-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\GNU-C-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\HP-C-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\HP-CXX-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\IAR-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\Intel-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\IntelLLVM-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\MSVC-C.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\MSVC-CXX.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\MSVC-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\NVHPC-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\PGI-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\PathScale-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\ROCMClang-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\SCO-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\TI-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\Watcom-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\XL-C-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\XL-CXX-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\XLClang-C-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\XLClang-CXX-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\zOS-C-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\CompilerId\VS-10.vcxproj.in;E:\CMake\share\cmake-3.21\Modules\Internal\FeatureTesting.cmake;E:\CMake\share\cmake-3.21\Modules\Platform\Windows-Determine-CXX.cmake;E:\CMake\share\cmake-3.21\Modules\Platform\Windows-MSVC-C.cmake;E:\CMake\share\cmake-3.21\Modules\Platform\Windows-MSVC-CXX.cmake;E:\CMake\share\cmake-3.21\Modules\Platform\Windows-MSVC.cmake;E:\CMake\share\cmake-3.21\Modules\Platform\Windows.cmake;E:\CMake\share\cmake-3.21\Modules\Platform\WindowsPaths.cmake;F:\source\repos\cmake-learn\TinyOrm\build\CMakeFiles\3.21.1\CMakeCCompiler.cmake;F:\source\repos\cmake-learn\TinyOrm\build\CMakeFiles\3.21.1\CMakeCXXCompiler.cmake;F:\source\repos\cmake-learn\TinyOrm\build\CMakeFiles\3.21.1\CMakeRCCompiler.cmake;F:\source\repos\cmake-learn\TinyOrm\build\CMakeFiles\3.21.1\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">F:\source\repos\cmake-learn\TinyOrm\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule F:/source/repos/cmake-learn/TinyOrm/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+E:\CMake\bin\cmake.exe -SF:/source/repos/cmake-learn/TinyOrm -BF:/source/repos/cmake-learn/TinyOrm/build --check-stamp-file F:/source/repos/cmake-learn/TinyOrm/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">E:\CMake\share\cmake-3.21\Modules\CMakeCCompiler.cmake.in;E:\CMake\share\cmake-3.21\Modules\CMakeCCompilerABI.c;E:\CMake\share\cmake-3.21\Modules\CMakeCInformation.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeCXXCompiler.cmake.in;E:\CMake\share\cmake-3.21\Modules\CMakeCXXCompilerABI.cpp;E:\CMake\share\cmake-3.21\Modules\CMakeCXXInformation.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeCommonLanguageInclude.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeCompilerIdDetection.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeDetermineCCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeDetermineCXXCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeDetermineCompileFeatures.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeDetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeDetermineCompilerABI.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeDetermineCompilerId.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeDetermineRCCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeDetermineSystem.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeFindBinUtils.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeGenericSystem.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeInitializeConfigs.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeLanguageInformation.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeParseImplicitIncludeInfo.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeParseImplicitLinkInfo.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeParseLibraryArchitecture.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeRCCompiler.cmake.in;E:\CMake\share\cmake-3.21\Modules\CMakeRCInformation.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeSystem.cmake.in;E:\CMake\share\cmake-3.21\Modules\CMakeSystemSpecificInformation.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeSystemSpecificInitialize.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeTestCCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeTestCXXCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeTestCompilerCommon.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeTestRCCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\ADSP-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\ARMCC-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\ARMClang-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\AppleClang-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\Borland-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\CMakeCommonCompilerMacros.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\Clang-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\Comeau-CXX-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\Cray-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\FujitsuClang-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\GHS-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\GNU-C-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\HP-C-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\HP-CXX-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\IAR-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\Intel-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\IntelLLVM-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\MSVC-C.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\MSVC-CXX.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\MSVC-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\NVHPC-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\PGI-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\PathScale-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\ROCMClang-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\SCO-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\TI-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\Watcom-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\XL-C-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\XL-CXX-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\XLClang-C-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\XLClang-CXX-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\zOS-C-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\CompilerId\VS-10.vcxproj.in;E:\CMake\share\cmake-3.21\Modules\Internal\FeatureTesting.cmake;E:\CMake\share\cmake-3.21\Modules\Platform\Windows-Determine-CXX.cmake;E:\CMake\share\cmake-3.21\Modules\Platform\Windows-MSVC-C.cmake;E:\CMake\share\cmake-3.21\Modules\Platform\Windows-MSVC-CXX.cmake;E:\CMake\share\cmake-3.21\Modules\Platform\Windows-MSVC.cmake;E:\CMake\share\cmake-3.21\Modules\Platform\Windows.cmake;E:\CMake\share\cmake-3.21\Modules\Platform\WindowsPaths.cmake;F:\source\repos\cmake-learn\TinyOrm\build\CMakeFiles\3.21.1\CMakeCCompiler.cmake;F:\source\repos\cmake-learn\TinyOrm\build\CMakeFiles\3.21.1\CMakeCXXCompiler.cmake;F:\source\repos\cmake-learn\TinyOrm\build\CMakeFiles\3.21.1\CMakeRCCompiler.cmake;F:\source\repos\cmake-learn\TinyOrm\build\CMakeFiles\3.21.1\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">F:\source\repos\cmake-learn\TinyOrm\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule F:/source/repos/cmake-learn/TinyOrm/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+E:\CMake\bin\cmake.exe -SF:/source/repos/cmake-learn/TinyOrm -BF:/source/repos/cmake-learn/TinyOrm/build --check-stamp-file F:/source/repos/cmake-learn/TinyOrm/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">E:\CMake\share\cmake-3.21\Modules\CMakeCCompiler.cmake.in;E:\CMake\share\cmake-3.21\Modules\CMakeCCompilerABI.c;E:\CMake\share\cmake-3.21\Modules\CMakeCInformation.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeCXXCompiler.cmake.in;E:\CMake\share\cmake-3.21\Modules\CMakeCXXCompilerABI.cpp;E:\CMake\share\cmake-3.21\Modules\CMakeCXXInformation.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeCommonLanguageInclude.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeCompilerIdDetection.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeDetermineCCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeDetermineCXXCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeDetermineCompileFeatures.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeDetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeDetermineCompilerABI.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeDetermineCompilerId.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeDetermineRCCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeDetermineSystem.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeFindBinUtils.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeGenericSystem.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeInitializeConfigs.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeLanguageInformation.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeParseImplicitIncludeInfo.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeParseImplicitLinkInfo.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeParseLibraryArchitecture.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeRCCompiler.cmake.in;E:\CMake\share\cmake-3.21\Modules\CMakeRCInformation.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeSystem.cmake.in;E:\CMake\share\cmake-3.21\Modules\CMakeSystemSpecificInformation.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeSystemSpecificInitialize.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeTestCCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeTestCXXCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeTestCompilerCommon.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeTestRCCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\ADSP-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\ARMCC-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\ARMClang-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\AppleClang-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\Borland-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\CMakeCommonCompilerMacros.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\Clang-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\Comeau-CXX-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\Cray-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\FujitsuClang-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\GHS-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\GNU-C-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\HP-C-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\HP-CXX-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\IAR-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\Intel-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\IntelLLVM-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\MSVC-C.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\MSVC-CXX.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\MSVC-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\NVHPC-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\PGI-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\PathScale-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\ROCMClang-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\SCO-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\TI-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\Watcom-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\XL-C-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\XL-CXX-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\XLClang-C-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\XLClang-CXX-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\zOS-C-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\CompilerId\VS-10.vcxproj.in;E:\CMake\share\cmake-3.21\Modules\Internal\FeatureTesting.cmake;E:\CMake\share\cmake-3.21\Modules\Platform\Windows-Determine-CXX.cmake;E:\CMake\share\cmake-3.21\Modules\Platform\Windows-MSVC-C.cmake;E:\CMake\share\cmake-3.21\Modules\Platform\Windows-MSVC-CXX.cmake;E:\CMake\share\cmake-3.21\Modules\Platform\Windows-MSVC.cmake;E:\CMake\share\cmake-3.21\Modules\Platform\Windows.cmake;E:\CMake\share\cmake-3.21\Modules\Platform\WindowsPaths.cmake;F:\source\repos\cmake-learn\TinyOrm\build\CMakeFiles\3.21.1\CMakeCCompiler.cmake;F:\source\repos\cmake-learn\TinyOrm\build\CMakeFiles\3.21.1\CMakeCXXCompiler.cmake;F:\source\repos\cmake-learn\TinyOrm\build\CMakeFiles\3.21.1\CMakeRCCompiler.cmake;F:\source\repos\cmake-learn\TinyOrm\build\CMakeFiles\3.21.1\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">F:\source\repos\cmake-learn\TinyOrm\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule F:/source/repos/cmake-learn/TinyOrm/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+E:\CMake\bin\cmake.exe -SF:/source/repos/cmake-learn/TinyOrm -BF:/source/repos/cmake-learn/TinyOrm/build --check-stamp-file F:/source/repos/cmake-learn/TinyOrm/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">E:\CMake\share\cmake-3.21\Modules\CMakeCCompiler.cmake.in;E:\CMake\share\cmake-3.21\Modules\CMakeCCompilerABI.c;E:\CMake\share\cmake-3.21\Modules\CMakeCInformation.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeCXXCompiler.cmake.in;E:\CMake\share\cmake-3.21\Modules\CMakeCXXCompilerABI.cpp;E:\CMake\share\cmake-3.21\Modules\CMakeCXXInformation.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeCommonLanguageInclude.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeCompilerIdDetection.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeDetermineCCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeDetermineCXXCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeDetermineCompileFeatures.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeDetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeDetermineCompilerABI.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeDetermineCompilerId.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeDetermineRCCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeDetermineSystem.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeFindBinUtils.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeGenericSystem.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeInitializeConfigs.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeLanguageInformation.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeParseImplicitIncludeInfo.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeParseImplicitLinkInfo.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeParseLibraryArchitecture.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeRCCompiler.cmake.in;E:\CMake\share\cmake-3.21\Modules\CMakeRCInformation.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeSystem.cmake.in;E:\CMake\share\cmake-3.21\Modules\CMakeSystemSpecificInformation.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeSystemSpecificInitialize.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeTestCCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeTestCXXCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeTestCompilerCommon.cmake;E:\CMake\share\cmake-3.21\Modules\CMakeTestRCCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\ADSP-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\ARMCC-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\ARMClang-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\AppleClang-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\Borland-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\CMakeCommonCompilerMacros.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\Clang-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\Comeau-CXX-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\Cray-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\FujitsuClang-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\GHS-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\GNU-C-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\HP-C-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\HP-CXX-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\IAR-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\Intel-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\IntelLLVM-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\MSVC-C.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\MSVC-CXX.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\MSVC-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\NVHPC-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\PGI-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\PathScale-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\ROCMClang-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\SCO-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\TI-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\Watcom-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\XL-C-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\XL-CXX-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\XLClang-C-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\XLClang-CXX-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\zOS-C-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake;E:\CMake\share\cmake-3.21\Modules\CompilerId\VS-10.vcxproj.in;E:\CMake\share\cmake-3.21\Modules\Internal\FeatureTesting.cmake;E:\CMake\share\cmake-3.21\Modules\Platform\Windows-Determine-CXX.cmake;E:\CMake\share\cmake-3.21\Modules\Platform\Windows-MSVC-C.cmake;E:\CMake\share\cmake-3.21\Modules\Platform\Windows-MSVC-CXX.cmake;E:\CMake\share\cmake-3.21\Modules\Platform\Windows-MSVC.cmake;E:\CMake\share\cmake-3.21\Modules\Platform\Windows.cmake;E:\CMake\share\cmake-3.21\Modules\Platform\WindowsPaths.cmake;F:\source\repos\cmake-learn\TinyOrm\build\CMakeFiles\3.21.1\CMakeCCompiler.cmake;F:\source\repos\cmake-learn\TinyOrm\build\CMakeFiles\3.21.1\CMakeCXXCompiler.cmake;F:\source\repos\cmake-learn\TinyOrm\build\CMakeFiles\3.21.1\CMakeRCCompiler.cmake;F:\source\repos\cmake-learn\TinyOrm\build\CMakeFiles\3.21.1\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">F:\source\repos\cmake-learn\TinyOrm\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="F:\source\repos\cmake-learn\TinyOrm\example\test.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="F:\source\repos\cmake-learn\TinyOrm\build\ZERO_CHECK.vcxproj">
+      <Project>{E05977D2-D5BC-304A-9B1C-B7F810A58E2E}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="F:\source\repos\cmake-learn\TinyOrm\build\tinyorm\mysql4cpp\mysql4cpp.vcxproj">
+      <Project>{4C33B5F7-4830-3DB0-BF4A-2514A01BF346}</Project>
+      <Name>mysql4cpp</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
