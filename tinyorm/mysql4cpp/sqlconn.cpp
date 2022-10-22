@@ -1,4 +1,4 @@
-#include "sqlConn.h"
+#include "sqlconn.h"
 #include "sqlresult.h"
 #include "connectionpool.h"
 
@@ -9,6 +9,16 @@ void close(MYSQL* sql)
 {
 	if (sql)
 		mysql_close(sql);
+}
+
+SqlConn::SqlConn(): ptr(unique_ptr<MYSQL, CloseFunc>(nullptr, ::close)), pool(nullptr)
+{
+
+}
+
+SqlConn::SqlConn(const SqlConn& conn): ptr(unique_ptr<MYSQL, CloseFunc>(nullptr, ::close)), pool(nullptr)
+{
+
 }
 
 SqlConn::SqlConn(MYSQL* sql, ConnectionPool* _pool): 

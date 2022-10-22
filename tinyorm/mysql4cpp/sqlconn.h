@@ -13,10 +13,11 @@ class ConnectionPool;
 class SqlConn
 {
 public:
+	SqlConn();
+	SqlConn(const SqlConn&);
 	SqlConn(MYSQL* mysql, ConnectionPool* pool);
 	SqlConn(SqlConn&& conn);
 	SqlConn& operator=(SqlConn&& conn);
-	SqlConn(SqlConn&) = delete;
 	SqlConn& operator=(const SqlConn&) = delete;
 
 	MYSQL* get();

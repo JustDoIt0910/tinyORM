@@ -1,5 +1,6 @@
 #include "statement.h"
 #include "preparedresult.h"
+#include <string.h>
 #include <assert.h>
 
 void stmtClose(MYSQL_STMT* stmt)

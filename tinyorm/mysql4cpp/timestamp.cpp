@@ -1,5 +1,7 @@
 #include "timestamp.h"
 #include "common.h"
+#include <string.h>
+#include <sys/time.h>
 #include <chrono>
 
 
@@ -43,7 +45,7 @@ void Timestamp::addTime(int value, Timestamp::TimeUnit unit)
 	struct tm _tm;
 	memset(&_tm, 0, sizeof(_tm));
 	time_t t = microSecondsSinceEpoch / microSecondsPerSecond;
-	localtime_s(&_tm, &t);
+	localtime_r(&t, &_tm);
 	switch (unit)
 	{
 	case year:
@@ -83,8 +85,8 @@ string Timestamp::toFormattedString()
 	struct tm _tm;
 	memset(&_tm, 0, sizeof(_tm));
 	time_t t = microSecondsSinceEpoch / microSecondsPerSecond;
-	localtime_s(&_tm, &t);
-	sprintf_s(buf, "%04d-%02d-%02d %02d:%02d:%02d",
+	localtime_r(&t, &_tm);
+	sprintf(buf, "%04d-%02d-%02d %02d:%02d:%02d",
 		_tm.tm_year + 1900, _tm.tm_mon + 1, _tm.tm_mday, _tm.tm_hour, _tm.tm_min, _tm.tm_sec);
 	return string(buf);
 }
@@ -98,7 +100,7 @@ MYSQL_TIME Timestamp::toMysqlTime(enum_mysql_timestamp_type type)
 	time_t t = microSecondsSinceEpoch / microSecondsPerSecond;
 	time_t micro = microSecondsSinceEpoch % microSecondsPerSecond;
 	memset(&_tm, 0, sizeof(_tm));
-	localtime_s(&_tm, &t);
+	localtime_r(&t, &_tm);
 	mytime.year = _tm.tm_year + 1900;
 	mytime.month = _tm.tm_mon + 1;
 	mytime.day = _tm.tm_mday;

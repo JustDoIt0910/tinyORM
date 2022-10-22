@@ -4,11 +4,21 @@ project(mysql4cpp)
 set(CMAKE_CXX_STANDARD 17)
 
 
+ 
+if(CMAKE_HOST_SYSTEM_NAME MATCHES "Windows")
+	message("current platform: Windows")
+	set(MYSQL_INCLUDE_DIR /usr/include/mysql)
+else()
+	message("current platform: Linux")
+	set(MYSQL_INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/mysql/include)
+endif()
+
+
 aux_source_directory(. DIR_SRC)
 add_library(${PROJECT_NAME} ${DIR_SRC})
 
-target_include_directories(${PROJECT_NAME} PRIVATE
+target_include_directories(${PROJECT_NAME} PUBLIC
 	${CMAKE_CURRENT_SOURCE_DIR}
-	${CMAKE_CURRENT_SOURCE_DIR}/mysql/include
+	${MYSQL_INCLUDE_DIR}
 	${CMAKE_CURRENT_SOURCE_DIR}/spdlog/include
 )

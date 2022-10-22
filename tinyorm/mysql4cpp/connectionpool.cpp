@@ -80,7 +80,7 @@ void ConnectionPool::releaseConn(SqlConn* conn)
 	unique_lock<mutex> lk(mu);
 	if (usedConnections.find(conn->getId()) == usedConnections.end())
 		return;
-	connections.insert(make_pair<int, SqlConn>(conn->getId(), move(*conn)));
+	connections[conn->getId()] = std::move(*conn);
 	usedConnections.erase(conn->getId());
 	idleConnections.insert(conn->getId());
 	spdlog::info("return connection#{0} total {1}", conn->getId(), idleConnections.size() + usedConnections.size());
