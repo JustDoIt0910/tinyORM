@@ -89,7 +89,7 @@ int main()
 - ~~select~~
 - ~~update~~
 - ~~create~~
-- delete
+- ~~delete~~
 - ~~分页~~
 - ~~raw sql~~
 - 自动迁移
