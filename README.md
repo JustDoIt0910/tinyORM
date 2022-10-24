@@ -1,5 +1,5 @@
 # tinyorm
-c++17 实现的简单ORM(仅支持mysql)
+c++17 实现的简单ORM(目前仅支持mysql)
 
 ```sh
 mkdir build
@@ -37,7 +37,7 @@ entity(User) {
 
 int main()
 {
-	orm::DB db("localhost", 3306, "root", "20010910cheng", "orm");
+	orm::DB db("localhost", 3306, "username", "password", "db");
 
     //Create
     ***************************************************************************************
