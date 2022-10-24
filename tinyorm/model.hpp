@@ -135,6 +135,8 @@ namespace orm {
 		template<typename... Args>
 		int Update(Args... args);
 
+		int Delete();
+
 		template<typename... Args>
 		Model<T>& Select(Args... args);
 
@@ -266,6 +268,7 @@ namespace orm {
 			cnt++;
 		}
 		stmt.executeUpdate();
+		reset();
 		return true;
 	}
 
@@ -320,7 +323,6 @@ namespace orm {
 		bindParams(stmt);
 		int rowAffect = stmt.executeUpdate();
 		reset();
-		conn.close();
 		return rowAffect;
 	}
 
@@ -328,6 +330,29 @@ namespace orm {
 	int Model<T>::Update(const T& t)
 	{
 		return 0;
+	}
+
+	template<typename T>
+	int Model<T>::Delete()
+	{
+		std::stringstream sql;
+		sql << "DELETE FROM " << tableName.value_or(getClassName());
+		if (constraints.size() > 0)
+		{
+			sql << " WHERE ";
+			for (int i = 0; i < constraints.size(); i++)
+			{
+				if (i > 1)
+					sql << " " << constraints[i].conj << " ";
+				sql << constraints[i].condition;
+			}
+		}
+		spdlog::info(sql.str());
+		Statement stmt = conn.prepareStatment(sql.str());
+		bindParams(stmt);
+		int rowAffect = stmt.executeUpdate();
+		reset();
+		return rowAffect;
 	}
 
 	template<typename T>
