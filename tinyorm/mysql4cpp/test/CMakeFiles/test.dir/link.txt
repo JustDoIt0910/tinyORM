@@ -1,0 +1,1 @@
+/usr/bin/c++  -g  -rdynamic CMakeFiles/test.dir/test.cpp.o  -o test  -L../../../build/tinyorm/mysql4cpp  -L../spdlog/lib -Wl,-rpath,../../../build/tinyorm/mysql4cpp:../spdlog/lib -lmysql4cpp -lspdlog -lmysqlclient 

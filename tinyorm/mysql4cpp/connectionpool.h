@@ -14,6 +14,10 @@ public:
 		int _port, const string& _db, int _poolSize,
 		int _maxWait, int _maxRetry,
 		bool _testOnBorrow = true, const string& _testSql = "select 1");
+    std::string getHost();
+    std::string getUsername();
+    std::string getPassword();
+    int getPort();
 	static ConnectionPool* getInstance();
 
 private:

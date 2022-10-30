@@ -102,3 +102,11 @@ SqlConn ConnectionPool::newConnection()
 	}
 	return SqlConn(mysql, this);
 }
+
+std::string ConnectionPool::getHost() {return host;}
+
+std::string ConnectionPool::getUsername() {return username;}
+
+std::string ConnectionPool::getPassword() {return password;}
+
+int ConnectionPool::getPort() {return port;}

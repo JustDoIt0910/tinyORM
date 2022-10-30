@@ -3,6 +3,7 @@
 #include "mysql.h"
 #include "sqlconn.h"
 #include "connectionpool.h"
+#include "databasemetadata.h"
 #include <memory>
 using namespace std;
 

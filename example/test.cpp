@@ -4,6 +4,7 @@
 #include "user.h"
 #include "tinyorm/model.hpp"
 #include "tinyorm/db.hpp"
+#include "tinyorm/migrate.hpp"
 
 int main()
 {
@@ -37,5 +38,6 @@ int main()
   for (User& user : users)
       printf("User{id = %d, name = %s, create_time = %s}\n", user.id, user.name.c_str(), user.createTime.toFormattedString().c_str());
 
-	return 0;
+  db.model<User>().AutoMigrate();
+  return 0;
 }

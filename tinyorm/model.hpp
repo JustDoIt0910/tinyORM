@@ -4,13 +4,10 @@
 #include <sstream>
 #include <iostream>
 #include "reflection.hpp"
-#include "mysql4cpp/common.h"
 #include "mysql4cpp/sqlconn.h"
 #include <algorithm>
 #include <unordered_map>
 #include <vector>
-#include <utility>
-#include <optional>
 #include <tuple>
 #include <type_traits>
 #include "spdlog/spdlog.h"
@@ -20,96 +17,6 @@
 #define LIMIT	"LIMIT"
 
 namespace orm {
-
-	class FieldMeta
-	{
-	public:
-		//变量名
-		std::string fieldName;
-		std::string cppType;
-
-		//数据库表中的列类型
-		std::optional<std::string> columnType;
-
-		//数据库表中的列名
-		std::optional<std::string> columnName;
-		
-		//附加元信息
-		std::vector<std::string> extra;
-		int offset;
-		bool isPk;
-		bool ignore;
-		bool autoInc;
-
-		FieldMeta() {};
-		FieldMeta(const std::string&, const orm::detail::Metadata&);
-		FieldMeta(FieldMeta&& meta);
-
-		FieldMeta& operator=(FieldMeta&& meta);
-		bool operator<(const FieldMeta& meta);
-	};
-
-	FieldMeta::FieldMeta(const std::string& _fieldName, const orm::detail::Metadata& meta): 
-		fieldName(_fieldName), cppType(meta.type), offset(meta.offset),
-		isPk(false), ignore(false), autoInc(false)
-	{
-		std::vector<std::string> tags = Util::split(Util::strip(meta.tag), ",");
-		std::vector<std::string>::const_iterator it = tags.cbegin();
-		for (; it != tags.cend(); it++)
-		{
-			size_t eq_pos = it->find_first_of("=");
-			if (eq_pos != it->npos)
-			{
-				std::string k = Util::strip(it->substr(0, eq_pos));
-				Util::toLowerCase(k);
-				if (k == "name")
-					columnName = Util::strip(it->substr(eq_pos + 1));
-				else if(k == "type")
-					columnType = Util::strip(it->substr(eq_pos + 1));
-			}
-			else
-			{
-				std::vector<std::string> exts = Util::split(Util::strip(*it), " ");
-				for (std::string ext : exts)
-				{
-					Util::toLowerCase(ext);
-					if (ext == "pk" || ext == "primary_key" || ext == "primary key")
-						isPk = true;
-					else if (ext == "auto_increment" || ext == "auto increment")
-						autoInc = true;
-					else if (ext == "ignore")
-						ignore = true;
-					else
-						extra.push_back(ext);
-				}
-			}
-		}
-		ignore = (isPk && autoInc) ? true : ignore;
-	}
-
-	FieldMeta::FieldMeta(FieldMeta&& meta) :
-		offset(meta.offset), isPk(meta.isPk), ignore(meta.ignore), autoInc(meta.autoInc),
-		fieldName(std::move(meta.fieldName)), cppType(std::move(meta.cppType))
-	{
-		std::swap(columnName, meta.columnName);
-		std::swap(columnType, meta.columnType);
-		std::swap(extra, meta.extra);
-	}
-
-	FieldMeta& FieldMeta::operator=(FieldMeta&& meta)
-	{
-		offset = meta.offset; isPk = meta.isPk; ignore = meta.ignore; autoInc = meta.autoInc; 
-		fieldName = std::move(meta.fieldName); cppType = std::move(meta.cppType);
-		std::swap(columnName, meta.columnName);
-		std::swap(columnType, meta.columnType);
-		std::swap(extra, meta.extra);
-		return *this;
-	}
-
-	bool FieldMeta::operator<(const FieldMeta& meta)
-	{
-		return offset < meta.offset;
-	}
 
 	class Constraint
 	{
@@ -127,7 +34,7 @@ namespace orm {
 	class Model
 	{
 	public:
-		Model(SqlConn&& conn, bool mode);
+		Model(SqlConn&& conn, std::string _db, bool mode);
 		bool Create(const T& t);
 
 		int Update(const T& t);
@@ -156,6 +63,7 @@ namespace orm {
 		std::vector<T> Fetch();
 		int Exec();
 
+        void AutoMigrate();
 		void setAutoCommit(bool mode);
 		void Commit();
 		void Rollback();
@@ -167,6 +75,7 @@ namespace orm {
 		void reset();
 
 		std::vector<FieldMeta> metadata;
+        std::vector<Index> indices;
 		std::unordered_map<std::string, int> columnToIndex;
 		std::optional<std::string> tableName;
 		std::vector<std::string> selectedColumns;
@@ -178,7 +87,17 @@ namespace orm {
 			QUERY,
 			UPDATE
 		} status;
+        std::string db;
+
+        static std::unordered_map<std::string, FieldMeta> fields_prev;
+        static std::vector<Index> indices_prev;
 	};
+
+    template<typename T>
+    std::unordered_map<std::string, FieldMeta> Model<T>::fields_prev;
+    template<typename T>
+    std::vector<Index> Model<T>::indices_prev;
+
 
 	template<size_t N, typename tup>
 	std::enable_if_t<N == std::tuple_size_v<tup>>
@@ -207,7 +126,7 @@ namespace orm {
 	}
 
 	template<typename T>
-	Model<T>::Model(SqlConn&& _conn, bool mode): conn(std::move(_conn)), status(INIT)
+	Model<T>::Model(SqlConn&& _conn, std::string _db, bool mode): conn(std::move(_conn)), status(INIT), db(_db)
 	{
 		conn.setAutocommit(mode);
 		auto metas = orm::Base<T>::getMetadatas();
@@ -223,7 +142,9 @@ namespace orm {
 		{
 			std::string col = metadata[i].columnName.value_or(metadata[i].fieldName);
 			columnToIndex[col] = i;
-		}	
+		}
+        auto inds = orm::Base<T>::getIndices();
+        indices.swap(inds);
 	}
 
 	template<typename T>
@@ -252,7 +173,7 @@ namespace orm {
 		}
 		sql << ")";
 		spdlog::info(sql.str());
-		Statement stmt = conn.prepareStatment(sql.str());
+		Statement stmt = conn.prepareStatement(sql.str());
 		cnt = 1;
 		for (int i = 0; i < metadata.size(); i++)
 		{
@@ -319,7 +240,7 @@ namespace orm {
 				sql << constraints[i].condition;
 			}
 		}
-		Statement stmt = conn.prepareStatment(sql.str());
+		Statement stmt = conn.prepareStatement(sql.str());
 		bindParams(stmt);
 		int rowAffect = stmt.executeUpdate();
 		reset();
@@ -348,7 +269,7 @@ namespace orm {
 			}
 		}
 		spdlog::info(sql.str());
-		Statement stmt = conn.prepareStatment(sql.str());
+		Statement stmt = conn.prepareStatement(sql.str());
 		bindParams(stmt);
 		int rowAffect = stmt.executeUpdate();
 		reset();
@@ -398,7 +319,7 @@ namespace orm {
 			spdlog::error("Current operation is a query, use Fetch()");
 			return 0;
 		}
-		Statement stmt = conn.prepareStatment(rawSql);
+		Statement stmt = conn.prepareStatement(rawSql);
 		bindParams(stmt);
 		int rowAffect = stmt.executeUpdate();
 		conn.close();
@@ -419,7 +340,7 @@ namespace orm {
 			spdlog::error("Current operation is not query, use Exec()");
 			return res;
 		}
-		Statement stmt = conn.prepareStatment(rawSql);
+		Statement stmt = conn.prepareStatement(rawSql);
 		bindParams(stmt);
 		ResultSet rs = stmt.executeQuery();
 		std::vector<std::string> fieldNames = stmt.fieldNames();
@@ -552,7 +473,7 @@ namespace orm {
 		if (limit > 0)
 			sql << " LIMIT " << limit;
 		spdlog::info(sql.str());
-		Statement stmt = conn.prepareStatment(sql.str());
+		Statement stmt = conn.prepareStatement(sql.str());
 		bindParams(stmt);
 		return stmt;
 	}

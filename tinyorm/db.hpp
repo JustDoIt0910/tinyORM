@@ -40,7 +40,7 @@ namespace orm {
 	template<typename T>
 	Model<T> DB::model()
 	{
-		return Model<T>(pool->getConn(), autoCommit);
+		return Model<T>(pool->getConn(), db, autoCommit);
 	}
 
 	void DB::setAutoCommit(bool mode)

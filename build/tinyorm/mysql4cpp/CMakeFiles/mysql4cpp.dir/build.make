@@ -129,9 +129,33 @@ tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/database.cpp.o.provides: tinyorm/mysq
 tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/database.cpp.o.provides.build: tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/database.cpp.o
 
 
+tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/databasemetadata.cpp.o: tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/flags.make
+tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/databasemetadata.cpp.o: ../tinyorm/mysql4cpp/databasemetadata.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zr/c_c++/tinyorm-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/databasemetadata.cpp.o"
+	cd /home/zr/c_c++/tinyorm-main/build/tinyorm/mysql4cpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mysql4cpp.dir/databasemetadata.cpp.o -c /home/zr/c_c++/tinyorm-main/tinyorm/mysql4cpp/databasemetadata.cpp
+
+tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/databasemetadata.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mysql4cpp.dir/databasemetadata.cpp.i"
+	cd /home/zr/c_c++/tinyorm-main/build/tinyorm/mysql4cpp && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zr/c_c++/tinyorm-main/tinyorm/mysql4cpp/databasemetadata.cpp > CMakeFiles/mysql4cpp.dir/databasemetadata.cpp.i
+
+tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/databasemetadata.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mysql4cpp.dir/databasemetadata.cpp.s"
+	cd /home/zr/c_c++/tinyorm-main/build/tinyorm/mysql4cpp && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zr/c_c++/tinyorm-main/tinyorm/mysql4cpp/databasemetadata.cpp -o CMakeFiles/mysql4cpp.dir/databasemetadata.cpp.s
+
+tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/databasemetadata.cpp.o.requires:
+
+.PHONY : tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/databasemetadata.cpp.o.requires
+
+tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/databasemetadata.cpp.o.provides: tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/databasemetadata.cpp.o.requires
+	$(MAKE) -f tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/build.make tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/databasemetadata.cpp.o.provides.build
+.PHONY : tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/databasemetadata.cpp.o.provides
+
+tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/databasemetadata.cpp.o.provides.build: tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/databasemetadata.cpp.o
+
+
 tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/preparedresult.cpp.o: tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/flags.make
 tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/preparedresult.cpp.o: ../tinyorm/mysql4cpp/preparedresult.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zr/c_c++/tinyorm-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/preparedresult.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zr/c_c++/tinyorm-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/preparedresult.cpp.o"
 	cd /home/zr/c_c++/tinyorm-main/build/tinyorm/mysql4cpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mysql4cpp.dir/preparedresult.cpp.o -c /home/zr/c_c++/tinyorm-main/tinyorm/mysql4cpp/preparedresult.cpp
 
 tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/preparedresult.cpp.i: cmake_force
@@ -155,7 +179,7 @@ tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/preparedresult.cpp.o.provides.build: 
 
 tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/result.cpp.o: tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/flags.make
 tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/result.cpp.o: ../tinyorm/mysql4cpp/result.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zr/c_c++/tinyorm-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/result.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zr/c_c++/tinyorm-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/result.cpp.o"
 	cd /home/zr/c_c++/tinyorm-main/build/tinyorm/mysql4cpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mysql4cpp.dir/result.cpp.o -c /home/zr/c_c++/tinyorm-main/tinyorm/mysql4cpp/result.cpp
 
 tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/result.cpp.i: cmake_force
@@ -179,7 +203,7 @@ tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/result.cpp.o.provides.build: tinyorm/
 
 tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/sqlconn.cpp.o: tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/flags.make
 tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/sqlconn.cpp.o: ../tinyorm/mysql4cpp/sqlconn.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zr/c_c++/tinyorm-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/sqlconn.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zr/c_c++/tinyorm-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/sqlconn.cpp.o"
 	cd /home/zr/c_c++/tinyorm-main/build/tinyorm/mysql4cpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mysql4cpp.dir/sqlconn.cpp.o -c /home/zr/c_c++/tinyorm-main/tinyorm/mysql4cpp/sqlconn.cpp
 
 tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/sqlconn.cpp.i: cmake_force
@@ -203,7 +227,7 @@ tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/sqlconn.cpp.o.provides.build: tinyorm
 
 tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/sqlresult.cpp.o: tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/flags.make
 tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/sqlresult.cpp.o: ../tinyorm/mysql4cpp/sqlresult.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zr/c_c++/tinyorm-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/sqlresult.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zr/c_c++/tinyorm-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/sqlresult.cpp.o"
 	cd /home/zr/c_c++/tinyorm-main/build/tinyorm/mysql4cpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mysql4cpp.dir/sqlresult.cpp.o -c /home/zr/c_c++/tinyorm-main/tinyorm/mysql4cpp/sqlresult.cpp
 
 tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/sqlresult.cpp.i: cmake_force
@@ -227,7 +251,7 @@ tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/sqlresult.cpp.o.provides.build: tinyo
 
 tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/statement.cpp.o: tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/flags.make
 tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/statement.cpp.o: ../tinyorm/mysql4cpp/statement.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zr/c_c++/tinyorm-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/statement.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zr/c_c++/tinyorm-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/statement.cpp.o"
 	cd /home/zr/c_c++/tinyorm-main/build/tinyorm/mysql4cpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mysql4cpp.dir/statement.cpp.o -c /home/zr/c_c++/tinyorm-main/tinyorm/mysql4cpp/statement.cpp
 
 tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/statement.cpp.i: cmake_force
@@ -251,7 +275,7 @@ tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/statement.cpp.o.provides.build: tinyo
 
 tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/timestamp.cpp.o: tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/flags.make
 tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/timestamp.cpp.o: ../tinyorm/mysql4cpp/timestamp.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zr/c_c++/tinyorm-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/timestamp.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zr/c_c++/tinyorm-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/timestamp.cpp.o"
 	cd /home/zr/c_c++/tinyorm-main/build/tinyorm/mysql4cpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mysql4cpp.dir/timestamp.cpp.o -c /home/zr/c_c++/tinyorm-main/tinyorm/mysql4cpp/timestamp.cpp
 
 tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/timestamp.cpp.i: cmake_force
@@ -278,6 +302,7 @@ mysql4cpp_OBJECTS = \
 "CMakeFiles/mysql4cpp.dir/common.cpp.o" \
 "CMakeFiles/mysql4cpp.dir/connectionpool.cpp.o" \
 "CMakeFiles/mysql4cpp.dir/database.cpp.o" \
+"CMakeFiles/mysql4cpp.dir/databasemetadata.cpp.o" \
 "CMakeFiles/mysql4cpp.dir/preparedresult.cpp.o" \
 "CMakeFiles/mysql4cpp.dir/result.cpp.o" \
 "CMakeFiles/mysql4cpp.dir/sqlconn.cpp.o" \
@@ -291,6 +316,7 @@ mysql4cpp_EXTERNAL_OBJECTS =
 tinyorm/mysql4cpp/libmysql4cpp.a: tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/common.cpp.o
 tinyorm/mysql4cpp/libmysql4cpp.a: tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/connectionpool.cpp.o
 tinyorm/mysql4cpp/libmysql4cpp.a: tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/database.cpp.o
+tinyorm/mysql4cpp/libmysql4cpp.a: tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/databasemetadata.cpp.o
 tinyorm/mysql4cpp/libmysql4cpp.a: tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/preparedresult.cpp.o
 tinyorm/mysql4cpp/libmysql4cpp.a: tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/result.cpp.o
 tinyorm/mysql4cpp/libmysql4cpp.a: tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/sqlconn.cpp.o
@@ -299,7 +325,7 @@ tinyorm/mysql4cpp/libmysql4cpp.a: tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/sta
 tinyorm/mysql4cpp/libmysql4cpp.a: tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/timestamp.cpp.o
 tinyorm/mysql4cpp/libmysql4cpp.a: tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/build.make
 tinyorm/mysql4cpp/libmysql4cpp.a: tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zr/c_c++/tinyorm-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX static library libmysql4cpp.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zr/c_c++/tinyorm-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX static library libmysql4cpp.a"
 	cd /home/zr/c_c++/tinyorm-main/build/tinyorm/mysql4cpp && $(CMAKE_COMMAND) -P CMakeFiles/mysql4cpp.dir/cmake_clean_target.cmake
 	cd /home/zr/c_c++/tinyorm-main/build/tinyorm/mysql4cpp && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/mysql4cpp.dir/link.txt --verbose=$(VERBOSE)
 
@@ -311,6 +337,7 @@ tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/build: tinyorm/mysql4cpp/libmysql4cpp
 tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/requires: tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/common.cpp.o.requires
 tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/requires: tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/connectionpool.cpp.o.requires
 tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/requires: tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/database.cpp.o.requires
+tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/requires: tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/databasemetadata.cpp.o.requires
 tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/requires: tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/preparedresult.cpp.o.requires
 tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/requires: tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/result.cpp.o.requires
 tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/requires: tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/sqlconn.cpp.o.requires

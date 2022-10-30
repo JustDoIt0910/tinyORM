@@ -100,6 +100,29 @@ tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/database.cpp.o
  /home/zr/c_c++/tinyorm-main/tinyorm/mysql4cpp/connectionpool.h
  /home/zr/c_c++/tinyorm-main/tinyorm/mysql4cpp/database.cpp
  /home/zr/c_c++/tinyorm-main/tinyorm/mysql4cpp/database.h
+ /home/zr/c_c++/tinyorm-main/tinyorm/mysql4cpp/databasemetadata.h
+ /home/zr/c_c++/tinyorm-main/tinyorm/mysql4cpp/result.h
+ /home/zr/c_c++/tinyorm-main/tinyorm/mysql4cpp/resultset.h
+ /home/zr/c_c++/tinyorm-main/tinyorm/mysql4cpp/sqlconn.h
+ /home/zr/c_c++/tinyorm-main/tinyorm/mysql4cpp/statement.h
+ /home/zr/c_c++/tinyorm-main/tinyorm/mysql4cpp/timestamp.h
+tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/databasemetadata.cpp.o
+ ../tinyorm/mysql4cpp/mysql/include/binary_log_types.h
+ ../tinyorm/mysql4cpp/mysql/include/my_alloc.h
+ ../tinyorm/mysql4cpp/mysql/include/my_command.h
+ ../tinyorm/mysql4cpp/mysql/include/my_list.h
+ ../tinyorm/mysql4cpp/mysql/include/mysql.h
+ ../tinyorm/mysql4cpp/mysql/include/mysql/client_plugin.h
+ ../tinyorm/mysql4cpp/mysql/include/mysql/plugin_auth_common.h
+ ../tinyorm/mysql4cpp/mysql/include/mysql/psi/psi_base.h
+ ../tinyorm/mysql4cpp/mysql/include/mysql/psi/psi_memory.h
+ ../tinyorm/mysql4cpp/mysql/include/mysql_com.h
+ ../tinyorm/mysql4cpp/mysql/include/mysql_time.h
+ ../tinyorm/mysql4cpp/mysql/include/mysql_version.h
+ ../tinyorm/mysql4cpp/mysql/include/typelib.h
+ /home/zr/c_c++/tinyorm-main/tinyorm/mysql4cpp/common.h
+ /home/zr/c_c++/tinyorm-main/tinyorm/mysql4cpp/databasemetadata.cpp
+ /home/zr/c_c++/tinyorm-main/tinyorm/mysql4cpp/databasemetadata.h
  /home/zr/c_c++/tinyorm-main/tinyorm/mysql4cpp/result.h
  /home/zr/c_c++/tinyorm-main/tinyorm/mysql4cpp/resultset.h
  /home/zr/c_c++/tinyorm-main/tinyorm/mysql4cpp/sqlconn.h
@@ -140,6 +163,49 @@ tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/result.cpp.o
  ../tinyorm/mysql4cpp/mysql/include/mysql_time.h
  ../tinyorm/mysql4cpp/mysql/include/mysql_version.h
  ../tinyorm/mysql4cpp/mysql/include/typelib.h
+ ../tinyorm/mysql4cpp/spdlog/include/fmt/xchar.h
+ ../tinyorm/mysql4cpp/spdlog/include/spdlog-inl.h
+ ../tinyorm/mysql4cpp/spdlog/include/spdlog.h
+ ../tinyorm/mysql4cpp/spdlog/include/spdlog/common-inl.h
+ ../tinyorm/mysql4cpp/spdlog/include/spdlog/common.h
+ ../tinyorm/mysql4cpp/spdlog/include/spdlog/details/backtracer-inl.h
+ ../tinyorm/mysql4cpp/spdlog/include/spdlog/details/backtracer.h
+ ../tinyorm/mysql4cpp/spdlog/include/spdlog/details/circular_q.h
+ ../tinyorm/mysql4cpp/spdlog/include/spdlog/details/console_globals.h
+ ../tinyorm/mysql4cpp/spdlog/include/spdlog/details/fmt_helper.h
+ ../tinyorm/mysql4cpp/spdlog/include/spdlog/details/log_msg-inl.h
+ ../tinyorm/mysql4cpp/spdlog/include/spdlog/details/log_msg.h
+ ../tinyorm/mysql4cpp/spdlog/include/spdlog/details/log_msg_buffer-inl.h
+ ../tinyorm/mysql4cpp/spdlog/include/spdlog/details/log_msg_buffer.h
+ ../tinyorm/mysql4cpp/spdlog/include/spdlog/details/null_mutex.h
+ ../tinyorm/mysql4cpp/spdlog/include/spdlog/details/os-inl.h
+ ../tinyorm/mysql4cpp/spdlog/include/spdlog/details/os.h
+ ../tinyorm/mysql4cpp/spdlog/include/spdlog/details/periodic_worker-inl.h
+ ../tinyorm/mysql4cpp/spdlog/include/spdlog/details/periodic_worker.h
+ ../tinyorm/mysql4cpp/spdlog/include/spdlog/details/registry-inl.h
+ ../tinyorm/mysql4cpp/spdlog/include/spdlog/details/registry.h
+ ../tinyorm/mysql4cpp/spdlog/include/spdlog/details/synchronous_factory.h
+ ../tinyorm/mysql4cpp/spdlog/include/spdlog/details/windows_include.h
+ ../tinyorm/mysql4cpp/spdlog/include/spdlog/fmt/bundled/core.h
+ ../tinyorm/mysql4cpp/spdlog/include/spdlog/fmt/bundled/format-inl.h
+ ../tinyorm/mysql4cpp/spdlog/include/spdlog/fmt/bundled/format.h
+ ../tinyorm/mysql4cpp/spdlog/include/spdlog/fmt/bundled/xchar.h
+ ../tinyorm/mysql4cpp/spdlog/include/spdlog/fmt/fmt.h
+ ../tinyorm/mysql4cpp/spdlog/include/spdlog/fmt/xchar.h
+ ../tinyorm/mysql4cpp/spdlog/include/spdlog/formatter.h
+ ../tinyorm/mysql4cpp/spdlog/include/spdlog/logger-inl.h
+ ../tinyorm/mysql4cpp/spdlog/include/spdlog/logger.h
+ ../tinyorm/mysql4cpp/spdlog/include/spdlog/pattern_formatter-inl.h
+ ../tinyorm/mysql4cpp/spdlog/include/spdlog/pattern_formatter.h
+ ../tinyorm/mysql4cpp/spdlog/include/spdlog/sinks/ansicolor_sink-inl.h
+ ../tinyorm/mysql4cpp/spdlog/include/spdlog/sinks/ansicolor_sink.h
+ ../tinyorm/mysql4cpp/spdlog/include/spdlog/sinks/sink-inl.h
+ ../tinyorm/mysql4cpp/spdlog/include/spdlog/sinks/sink.h
+ ../tinyorm/mysql4cpp/spdlog/include/spdlog/sinks/wincolor_sink-inl.h
+ ../tinyorm/mysql4cpp/spdlog/include/spdlog/sinks/wincolor_sink.h
+ ../tinyorm/mysql4cpp/spdlog/include/spdlog/spdlog.h
+ ../tinyorm/mysql4cpp/spdlog/include/spdlog/tweakme.h
+ ../tinyorm/mysql4cpp/spdlog/include/spdlog/version.h
  /home/zr/c_c++/tinyorm-main/tinyorm/mysql4cpp/result.cpp
  /home/zr/c_c++/tinyorm-main/tinyorm/mysql4cpp/result.h
  /home/zr/c_c++/tinyorm-main/tinyorm/mysql4cpp/timestamp.h
@@ -159,6 +225,7 @@ tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/sqlconn.cpp.o
  ../tinyorm/mysql4cpp/mysql/include/typelib.h
  /home/zr/c_c++/tinyorm-main/tinyorm/mysql4cpp/common.h
  /home/zr/c_c++/tinyorm-main/tinyorm/mysql4cpp/connectionpool.h
+ /home/zr/c_c++/tinyorm-main/tinyorm/mysql4cpp/databasemetadata.h
  /home/zr/c_c++/tinyorm-main/tinyorm/mysql4cpp/result.h
  /home/zr/c_c++/tinyorm-main/tinyorm/mysql4cpp/resultset.h
  /home/zr/c_c++/tinyorm-main/tinyorm/mysql4cpp/sqlconn.cpp

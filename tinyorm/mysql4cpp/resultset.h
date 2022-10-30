@@ -9,8 +9,15 @@ class ResultSet
 {
 public:
 	ResultSet(Result* res, bool _valid): _isValid(_valid) { result = unique_ptr<Result>(res); }
-	ResultSet(ResultSet& o) = delete;
+	ResultSet(const ResultSet& o) = delete;
+    ResultSet& operator=(const ResultSet& o) = delete;
 	ResultSet(ResultSet&& o): result(o.result.release()), _isValid(o._isValid){}
+    ResultSet& operator=(ResultSet&& o)
+    {
+        result = std::move(o.result);
+        _isValid = o._isValid;
+        return *this;
+    }
 
 	int getInt(int columnIndex) { return result->getInt(columnIndex); }
 	int getInt(const string& columnName) { return result->getInt(columnName); }

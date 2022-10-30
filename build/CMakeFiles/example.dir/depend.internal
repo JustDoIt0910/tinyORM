@@ -3,13 +3,16 @@
 
 CMakeFiles/example.dir/example/test.cpp.o
  ..//tinyorm/db.hpp
+ ..//tinyorm/migrate.hpp
  ..//tinyorm/model.hpp
  ..//tinyorm/mysql4cpp/common.h
  ..//tinyorm/mysql4cpp/timestamp.h
  ..//tinyorm/reflection.hpp
+ ../tinyorm/datatype.hpp
  ../tinyorm/model.hpp
  ../tinyorm/mysql4cpp/common.h
  ../tinyorm/mysql4cpp/connectionpool.h
+ ../tinyorm/mysql4cpp/databasemetadata.h
  ../tinyorm/mysql4cpp/mysql/include/binary_log_types.h
  ../tinyorm/mysql4cpp/mysql/include/my_alloc.h
  ../tinyorm/mysql4cpp/mysql/include/my_command.h

@@ -10,11 +10,13 @@ using namespace std;
 typedef void (*CloseFunc)(MYSQL*);
 class ConnectionPool;
 
+class DatabaseMetadata;
+
 class SqlConn
 {
 public:
 	SqlConn();
-	SqlConn(const SqlConn&);
+	//SqlConn(const SqlConn&);
 	SqlConn(MYSQL* mysql, ConnectionPool* pool);
 	SqlConn(SqlConn&& conn);
 	SqlConn& operator=(SqlConn&& conn);
@@ -26,7 +28,7 @@ public:
 	void setError(const string& err);
 	void setInternalError();
 	string getError();
-	Statement prepareStatment(const string& sql);
+	Statement prepareStatement(const string& sql);
 	ResultSet executeQuery(const string& sql);
 	unsigned long long executeUpdate(const string& sql);
 	bool setAutocommit(bool);
@@ -34,6 +36,8 @@ public:
 	bool rollback();
 	bool testConn(const string& testSql, int expect);
 	void close();
+
+    DatabaseMetadata getMetadata();
 
 private:
 	unique_ptr<MYSQL, CloseFunc> ptr;

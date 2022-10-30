@@ -206,6 +206,33 @@ database.cpp.s:
 	cd /home/zr/c_c++/tinyorm-main/build && $(MAKE) -f tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/build.make tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/database.cpp.s
 .PHONY : database.cpp.s
 
+databasemetadata.o: databasemetadata.cpp.o
+
+.PHONY : databasemetadata.o
+
+# target to build an object file
+databasemetadata.cpp.o:
+	cd /home/zr/c_c++/tinyorm-main/build && $(MAKE) -f tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/build.make tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/databasemetadata.cpp.o
+.PHONY : databasemetadata.cpp.o
+
+databasemetadata.i: databasemetadata.cpp.i
+
+.PHONY : databasemetadata.i
+
+# target to preprocess a source file
+databasemetadata.cpp.i:
+	cd /home/zr/c_c++/tinyorm-main/build && $(MAKE) -f tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/build.make tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/databasemetadata.cpp.i
+.PHONY : databasemetadata.cpp.i
+
+databasemetadata.s: databasemetadata.cpp.s
+
+.PHONY : databasemetadata.s
+
+# target to generate assembly for a file
+databasemetadata.cpp.s:
+	cd /home/zr/c_c++/tinyorm-main/build && $(MAKE) -f tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/build.make tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir/databasemetadata.cpp.s
+.PHONY : databasemetadata.cpp.s
+
 preparedresult.o: preparedresult.cpp.o
 
 .PHONY : preparedresult.o
@@ -386,6 +413,9 @@ help:
 	@echo "... database.o"
 	@echo "... database.i"
 	@echo "... database.s"
+	@echo "... databasemetadata.o"
+	@echo "... databasemetadata.i"
+	@echo "... databasemetadata.s"
 	@echo "... preparedresult.o"
 	@echo "... preparedresult.i"
 	@echo "... preparedresult.s"

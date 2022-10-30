@@ -1,4 +1,5 @@
 #include "result.h"
+#include "spdlog.h"
 
 bool Result::isInt(enum_field_types mysqlType)
 {
@@ -27,7 +28,8 @@ bool Result::isString(enum_field_types mysqlType)
 {
 	return (mysqlType == MYSQL_TYPE_STRING ||
 		mysqlType == MYSQL_TYPE_VAR_STRING ||
-		mysqlType == MYSQL_TYPE_VARCHAR);
+		mysqlType == MYSQL_TYPE_VARCHAR ||
+        mysqlType == MYSQL_TYPE_BLOB);
 }
 
 bool Result::isTime(enum_field_types mysqlType)

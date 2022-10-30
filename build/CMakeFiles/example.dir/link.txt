@@ -1,1 +1,1 @@
-/usr/bin/c++    -rdynamic CMakeFiles/example.dir/example/test.cpp.o  -o example  -L/home/zr/c_c++/tinyorm-main/tinyorm/mysql4cpp/spdlog/lib -Wl,-rpath,/home/zr/c_c++/tinyorm-main/tinyorm/mysql4cpp/spdlog/lib -lspdlog tinyorm/mysql4cpp/libmysql4cpp.a -lmysqlclient 
+/usr/bin/c++  -g  -rdynamic CMakeFiles/example.dir/example/test.cpp.o  -o example  -L/home/zr/c_c++/tinyorm-main/tinyorm/mysql4cpp/spdlog/lib -Wl,-rpath,/home/zr/c_c++/tinyorm-main/tinyorm/mysql4cpp/spdlog/lib -lspdlog tinyorm/mysql4cpp/libmysql4cpp.a -lmysqlclient 

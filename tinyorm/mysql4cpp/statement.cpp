@@ -145,6 +145,7 @@ void Statement::makeResultBind(const FieldMeta& field)
 		resBind.push_back(newBind(MYSQL_TYPE_DOUBLE, BUFSIZE_DOUBLE));
 		break;
 	case MYSQL_TYPE_VARCHAR:
+	case MYSQL_TYPE_BLOB:
 	case MYSQL_TYPE_TINY_BLOB:
 	case MYSQL_TYPE_MEDIUM_BLOB:
 	case MYSQL_TYPE_LONG_BLOB:

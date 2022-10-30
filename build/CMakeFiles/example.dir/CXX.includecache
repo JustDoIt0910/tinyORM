@@ -16,6 +16,20 @@ mysql4cpp/connectionpool.h
 vector
 -
 
+..//tinyorm/migrate.hpp
+vector
+-
+model.hpp
+../tinyorm/model.hpp
+mysql4cpp/connectionpool.h
+../tinyorm/mysql4cpp/connectionpool.h
+mysql4cpp/sqlconn.h
+../tinyorm/mysql4cpp/sqlconn.h
+mysql4cpp/databasemetadata.h
+../tinyorm/mysql4cpp/databasemetadata.h
+spdlog/spdlog.h
+../tinyorm/spdlog/spdlog.h
+
 ..//tinyorm/model.hpp
 sstream
 -
@@ -23,8 +37,6 @@ iostream
 -
 reflection.hpp
 ../tinyorm/reflection.hpp
-mysql4cpp/common.h
-../tinyorm/mysql4cpp/common.h
 mysql4cpp/sqlconn.h
 ../tinyorm/mysql4cpp/sqlconn.h
 algorithm
@@ -32,10 +44,6 @@ algorithm
 unordered_map
 -
 vector
--
-utility
--
-optional
 -
 tuple
 -
@@ -67,6 +75,20 @@ map
 -
 string
 -
+datatype.hpp
+../tinyorm/datatype.hpp
+
+../tinyorm/datatype.hpp
+string
+-
+vector
+-
+utility
+-
+optional
+-
+mysql4cpp/common.h
+../tinyorm/mysql4cpp/common.h
 
 ../tinyorm/model.hpp
 sstream
@@ -75,8 +97,6 @@ iostream
 -
 reflection.hpp
 ../tinyorm/reflection.hpp
-mysql4cpp/common.h
-../tinyorm/mysql4cpp/common.h
 mysql4cpp/sqlconn.h
 ../tinyorm/mysql4cpp/sqlconn.h
 algorithm
@@ -84,10 +104,6 @@ algorithm
 unordered_map
 -
 vector
--
-utility
--
-optional
 -
 tuple
 -
@@ -113,6 +129,12 @@ unordered_set
 -
 condition_variable
 -
+
+../tinyorm/mysql4cpp/databasemetadata.h
+resultset.h
+../tinyorm/mysql4cpp/resultset.h
+sqlconn.h
+../tinyorm/mysql4cpp/sqlconn.h
 
 ../tinyorm/mysql4cpp/mysql/include/binary_log_types.h
 
@@ -805,6 +827,8 @@ map
 -
 string
 -
+datatype.hpp
+../tinyorm/datatype.hpp
 
 /home/zr/c_c++/tinyorm-main/example/test.cpp
 iostream
@@ -819,6 +843,8 @@ tinyorm/model.hpp
 /home/zr/c_c++/tinyorm-main/example/tinyorm/model.hpp
 tinyorm/db.hpp
 /home/zr/c_c++/tinyorm-main/example/tinyorm/db.hpp
+tinyorm/migrate.hpp
+/home/zr/c_c++/tinyorm-main/example/tinyorm/migrate.hpp
 
 /home/zr/c_c++/tinyorm-main/example/user.h
 string

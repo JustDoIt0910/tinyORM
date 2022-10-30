@@ -1,6 +1,7 @@
 #include "sqlconn.h"
 #include "sqlresult.h"
 #include "connectionpool.h"
+#include "databasemetadata.h"
 
 int SqlConn::globalId = 1;
 mutex SqlConn::mu;
@@ -11,18 +12,12 @@ void close(MYSQL* sql)
 		mysql_close(sql);
 }
 
-SqlConn::SqlConn(): ptr(unique_ptr<MYSQL, CloseFunc>(nullptr, ::close)), pool(nullptr)
-{
+SqlConn::SqlConn(): ptr(unique_ptr<MYSQL, CloseFunc>(nullptr, ::close)), pool(nullptr){}
 
-}
+//SqlConn::SqlConn(const SqlConn& conn): ptr(unique_ptr<MYSQL, CloseFunc>(nullptr, ::close)), pool(nullptr){}
 
-SqlConn::SqlConn(const SqlConn& conn): ptr(unique_ptr<MYSQL, CloseFunc>(nullptr, ::close)), pool(nullptr)
-{
-
-}
-
-SqlConn::SqlConn(MYSQL* sql, ConnectionPool* _pool): 
-	ptr(unique_ptr<MYSQL, CloseFunc>(sql, ::close)), pool(_pool)
+SqlConn::SqlConn(MYSQL* mysql, ConnectionPool* _pool):
+	ptr(unique_ptr<MYSQL, CloseFunc>(mysql, ::close)), pool(_pool)
 {
 	lock_guard<mutex> lg(mu);
 	id = globalId++;
@@ -41,6 +36,7 @@ SqlConn& SqlConn::operator=(SqlConn&& conn)
 {
 	if (this == &conn)
 		return *this;
+    this->id = conn.id;
 	this->ptr.reset(conn.ptr.release());
 	this->error = conn.error;
 	this->pool = conn.pool;
@@ -79,7 +75,7 @@ string SqlConn::getError()
 	return error;
 }
 
-Statement SqlConn::prepareStatment(const string& sql)
+Statement SqlConn::prepareStatement(const string& sql)
 {
 	return Statement(mysql_stmt_init(ptr.get()), sql);
 }
@@ -137,4 +133,19 @@ void SqlConn::close()
 {
 	if (pool)
 		pool->releaseConn(this);
+}
+
+DatabaseMetadata SqlConn::getMetadata()
+{
+    MYSQL* mysql = new MYSQL;
+    mysql_init(mysql);
+    mysql_options(mysql, MYSQL_SET_CHARSET_NAME, "gbk");
+    if (!mysql_real_connect(mysql, pool->getHost().c_str(),
+                            pool->getUsername().c_str(), pool->getPassword().c_str(),
+                            "information_schema", pool->getPort(), NULL, 0))
+    {
+        delete mysql;
+        return DatabaseMetadata(SqlConn(nullptr, nullptr));
+    }
+    return DatabaseMetadata(SqlConn(mysql, nullptr));
 }

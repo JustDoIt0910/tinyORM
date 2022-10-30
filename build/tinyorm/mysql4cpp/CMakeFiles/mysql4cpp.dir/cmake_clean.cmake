@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/mysql4cpp.dir/common.cpp.o"
   "CMakeFiles/mysql4cpp.dir/connectionpool.cpp.o"
   "CMakeFiles/mysql4cpp.dir/database.cpp.o"
+  "CMakeFiles/mysql4cpp.dir/databasemetadata.cpp.o"
   "CMakeFiles/mysql4cpp.dir/preparedresult.cpp.o"
   "CMakeFiles/mysql4cpp.dir/result.cpp.o"
   "CMakeFiles/mysql4cpp.dir/sqlconn.cpp.o"
