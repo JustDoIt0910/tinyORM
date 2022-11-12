@@ -7,10 +7,12 @@ set(CMAKE_CXX_STANDARD 17)
  
 if(CMAKE_HOST_SYSTEM_NAME MATCHES "Windows")
 	message("current platform: Windows")
-	set(MYSQL_INCLUDE_DIR /usr/include/mysql)
+	set(MYSQL_INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/mysql/include)
+
 else()
 	message("current platform: Linux")
-	set(MYSQL_INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/mysql/include)
+	set(MYSQL_INCLUDE_DIR /usr/include/mysql)
+
 endif()
 
 

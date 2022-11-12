@@ -6,5 +6,5 @@ CXX_FLAGS = -g   -std=gnu++1z
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/zr/c_c++/tinyorm-main/tinyorm/mysql4cpp -I/home/zr/c_c++/tinyorm-main/tinyorm/mysql4cpp/mysql/include -I/home/zr/c_c++/tinyorm-main/tinyorm/mysql4cpp/spdlog/include 
+CXX_INCLUDES = -I/home/zr/c_c++/tinyorm-main/tinyorm/mysql4cpp -I/usr/include/mysql -I/home/zr/c_c++/tinyorm-main/tinyorm/mysql4cpp/spdlog/include 
 

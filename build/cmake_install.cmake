@@ -40,6 +40,7 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/zr/c_c++/tinyorm-main/build/tinyorm/mysql4cpp/cmake_install.cmake")
+  include("/home/zr/c_c++/tinyorm-main/build/tinyorm/json-3.11.2/cmake_install.cmake")
 
 endif()
 

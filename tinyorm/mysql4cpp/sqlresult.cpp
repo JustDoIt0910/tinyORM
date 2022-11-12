@@ -98,6 +98,8 @@ string SqlResult::getString(int columnIndex)
 {
 	if (!isValidIndex(columnIndex - 1) || !isString(fields[columnIndex - 1].type))
 		return string();
+    if(row[columnIndex - 1] == nullptr)
+        return string();
 	return string(row[columnIndex - 1]);
 }
 

@@ -2,7 +2,7 @@
 #include "spdlog.h"
 #include <chrono>
 
-ConnectionPool* ConnectionPool::instance;
+ConnectionPool* ConnectionPool::instance = nullptr;
 mutex ConnectionPool::instanceMu;
 
 void ConnectionPool::configure(const string& _host, const string& _username, const string& _password, int _port, 
@@ -44,11 +44,11 @@ SqlConn ConnectionPool::getConn()
 	if (idleConnections.size() > 0)
 	{
 		int connId = *idleConnections.begin();
-		SqlConn conn = move(connections.at(connId));
+		SqlConn conn = std::move(connections.at(connId));
 		idleConnections.erase(connId);
 		connections.erase(connId);
 		usedConnections.insert(connId);
-		spdlog::info("reuse idle connection#{0}, total {1}", connId, idleConnections.size() + usedConnections.size());
+		//spdlog::info("reuse idle connection#{0}, total {1}", connId, idleConnections.size() + usedConnections.size());
 		return conn;
 	}
 	else if (total < poolSize)
@@ -63,7 +63,7 @@ SqlConn ConnectionPool::getConn()
 			return conn;
 		}
 		usedConnections.insert(conn.getId());
-		spdlog::info("create new connection#{0}, total {1}", conn.getId(), idleConnections.size() + usedConnections.size());
+		//spdlog::info("create new connection#{0}, total {1}", conn.getId(), idleConnections.size() + usedConnections.size());
 		return conn;
 	}
 	else
@@ -83,7 +83,7 @@ void ConnectionPool::releaseConn(SqlConn* conn)
 	connections[conn->getId()] = std::move(*conn);
 	usedConnections.erase(conn->getId());
 	idleConnections.insert(conn->getId());
-	spdlog::info("return connection#{0} total {1}", conn->getId(), idleConnections.size() + usedConnections.size());
+	//spdlog::info("return connection#{0} total {1}", conn->getId(), idleConnections.size() + usedConnections.size());
 }
 
 SqlConn ConnectionPool::newConnection()

@@ -4,13 +4,16 @@
 #include <sstream>
 #include <iostream>
 #include "reflection.hpp"
+#include "dataloader.hpp"
 #include "mysql4cpp/sqlconn.h"
 #include <algorithm>
 #include <unordered_map>
 #include <vector>
 #include <tuple>
 #include <type_traits>
+#include <mutex>
 #include "spdlog/spdlog.h"
+#include "naming.hpp"
 
 #define AND		"AND"
 #define OR		"OR"
@@ -18,11 +21,16 @@
 
 namespace orm {
 
+    //定义查询/修改时候的限制条件，也就是where,or的内容
 	class Constraint
 	{
 	public:
+        //条件字符串(例如 id = ?)
 		std::string condition;
+        //连接词(and/or/limit)
 		std::string conj;
+        //绑定值(例如调用Where("id = ?", 1), condition 就是 "id = ?", conj 就是 "and", bindValues中保存了1)
+        //因为值可能是任意类型，只能使用动态分配内存，转void*存储，事后再释放掉
 		std::vector<std::pair<std::string, void*>> bindValues;
 
 		Constraint(const std::string& cond, const std::string& _conj): 
@@ -35,7 +43,9 @@ namespace orm {
 	{
 	public:
 		Model(SqlConn&& conn, std::string _db, bool mode);
-		bool Create(const T& t);
+		void Create(const T& t);
+
+        void Create(const std::vector<T>& v);
 
 		int Update(const T& t);
 
@@ -67,15 +77,23 @@ namespace orm {
 		void setAutoCommit(bool mode);
 		void Commit();
 		void Rollback();
+        std::string getTableName();
+        std::string getDefaultTableName();
+        FieldMeta& getMetadata(const std::string& name);
+        Index& getIndex(const std::string& name);
+        std::vector<FieldMeta>& getAllMetadata();
+        std::unordered_map<std::string, Index>& getIndices();
+        static void saveModel();
+
 	private:
-		std::string getClassName();
+		static std::string getClassName();
 		Statement prepareQuery(int limit);
 		void bindParams(Statement& stmt);
 		void fillObject(T& t, ResultSet& rs, std::vector<std::string>& cols);
 		void reset();
 
 		std::vector<FieldMeta> metadata;
-        std::vector<Index> indices;
+        std::unordered_map<std::string, Index> indices;
 		std::unordered_map<std::string, int> columnToIndex;
 		std::optional<std::string> tableName;
 		std::vector<std::string> selectedColumns;
@@ -87,16 +105,32 @@ namespace orm {
 			QUERY,
 			UPDATE
 		} status;
-        std::string db;
+        static std::mutex mu;
+        static std::string db;
 
-        static std::unordered_map<std::string, FieldMeta> fields_prev;
-        static std::vector<Index> indices_prev;
+        static std::vector<FieldMeta> fieldsPrev;
+        static std::unordered_map<std::string, int> columnToIndexPrev;
+        static std::unordered_map<std::string, Index> indicesPrev;
+        static std::string tablenamePrev;
 	};
 
     template<typename T>
-    std::unordered_map<std::string, FieldMeta> Model<T>::fields_prev;
+    std::mutex Model<T>::mu;
+
     template<typename T>
-    std::vector<Index> Model<T>::indices_prev;
+    std::string Model<T>::db;
+
+    template<typename T>
+    std::vector<FieldMeta> Model<T>::fieldsPrev;
+
+    template<typename T>
+    std::unordered_map<std::string, int> Model<T>::columnToIndexPrev;
+
+    template<typename T>
+    std::unordered_map<std::string, Index> Model<T>::indicesPrev;
+    
+    template<typename T>
+    std::string Model<T>::tablenamePrev;
 
 
 	template<size_t N, typename tup>
@@ -126,8 +160,13 @@ namespace orm {
 	}
 
 	template<typename T>
-	Model<T>::Model(SqlConn&& _conn, std::string _db, bool mode): conn(std::move(_conn)), status(INIT), db(_db)
+	Model<T>::Model(SqlConn&& _conn, std::string _db, bool mode): conn(std::move(_conn)), status(INIT)
 	{
+        {
+            std::lock_guard<std::mutex> lg(mu);
+            if(db.length() == 0)
+                db = _db;
+        }
 		conn.setAutocommit(mode);
 		auto metas = orm::Base<T>::getMetadatas();
 		for (auto it = metas.cbegin(); it != metas.cend(); it++)
@@ -140,18 +179,25 @@ namespace orm {
 		}
 		for (int i = 0; i < metadata.size(); i++)
 		{
-			std::string col = metadata[i].columnName.value_or(metadata[i].fieldName);
+			std::string col = metadata[i].getColumnName();
 			columnToIndex[col] = i;
 		}
         auto inds = orm::Base<T>::getIndices();
-        indices.swap(inds);
+        for(const Index& i: inds)
+            indices[i.name] = i;
+        for(FieldMeta& meta: metadata)
+            if(meta.hasIndex)
+            {
+                meta.index.name = (meta.index.type == Index::INDEX_TYPE_PRI) ? "PRIMARY" : meta.getColumnName();
+                indices[meta.index.name] = meta.index;
+            }
 	}
 
 	template<typename T>
-	bool Model<T>::Create(const T& t)
+	void Model<T>::Create(const T& t)
 	{
 		std::stringstream sql;
-		sql << "INSERT INTO " << tableName.value_or(getClassName()) << "(";
+		sql << "INSERT INTO " << getTableName() << "(";
 		bool isFirst = true;
 		int cnt = 0;
 		for (FieldMeta& field : metadata)
@@ -159,9 +205,9 @@ namespace orm {
 			if (field.ignore)
 				continue;
 			if (!isFirst)
-				sql << " ,";
+				sql << ", ";
 			isFirst = false;
-			sql << field.columnName.value_or(field.fieldName);
+			sql << field.getColumnName();
 			cnt++;
 		}
 		sql << ") VALUES(";
@@ -190,8 +236,61 @@ namespace orm {
 		}
 		stmt.executeUpdate();
 		reset();
-		return true;
 	}
+
+    template<typename T>
+    void Model<T>::Create(const std::vector<T>& v)
+    {
+        std::stringstream sql;
+        sql << "INSERT INTO " << getTableName() << "(";
+        bool isFirst = true;
+        int cnt = 0;
+        for (FieldMeta& field : metadata)
+        {
+            if (field.ignore)
+                continue;
+            if (!isFirst)
+                sql << ", ";
+            isFirst = false;
+            sql << field.getColumnName();
+            cnt++;
+        }
+        sql << ") VALUES";
+        for(int j = 0; j < v.size(); j++)
+        {
+            if(j > 0)
+                sql << ", ";
+            sql << "(";
+            for (int i = 0; i < cnt; i++)
+            {
+                sql << "?";
+                if (i < cnt - 1)
+                    sql << ", ";
+            }
+            sql << ")";
+        }
+        spdlog::info(sql.str());
+        Statement stmt = conn.prepareStatement(sql.str());
+        cnt = 1;
+        for(const T& t: v)
+        {
+            for (int i = 0; i < metadata.size(); i++)
+            {
+                if (metadata[i].ignore)
+                    continue;
+                if (metadata[i].cppType == ORM_TYPE_INT)
+                    stmt.setInt(cnt, getfield(int, t, i));
+                else if (metadata[i].cppType == ORM_TYPE_STRING ||
+                         metadata[i].cppType == ORM_TYPE_STD_STRING)
+                    stmt.setString(cnt, getfield(std::string, t, i));
+                else if (metadata[i].cppType == ORM_TYPE_TIMESTAMP)
+                    stmt.setTime(cnt, getfield(Timestamp, t, i), MYSQL_TYPE_TIMESTAMP);
+                cnt++;
+            }
+        }
+        stmt.executeUpdate();
+        reset();
+    }
 
 	template<typename T>
 	template<typename... Args>
@@ -227,7 +326,7 @@ namespace orm {
 	{
 		std::stringstream sql;
 		Constraint binds;
-		sql << "UPDATE " << tableName.value_or(getClassName()) << " SET ";
+		sql << "UPDATE " << getTableName() << " SET ";
 		updateColumn(sql, binds, std::make_tuple(args...));
 		constraints.insert(constraints.begin(), binds);
 		if (constraints.size() > 1)
@@ -240,6 +339,7 @@ namespace orm {
 				sql << constraints[i].condition;
 			}
 		}
+        spdlog::info(sql.str());
 		Statement stmt = conn.prepareStatement(sql.str());
 		bindParams(stmt);
 		int rowAffect = stmt.executeUpdate();
@@ -257,7 +357,7 @@ namespace orm {
 	int Model<T>::Delete()
 	{
 		std::stringstream sql;
-		sql << "DELETE FROM " << tableName.value_or(getClassName());
+		sql << "DELETE FROM " << getTableName();
 		if (constraints.size() > 0)
 		{
 			sql << " WHERE ";
@@ -454,7 +554,7 @@ namespace orm {
 			if (i < selectedColumns.size() - 1)
 				sql << ", ";
 		}
-		sql << " FROM " << tableName.value_or(getClassName());
+		sql << " FROM " << getTableName();
 		if (constraints.size() > 0)
 		{
 			sql << " WHERE ";
@@ -557,7 +657,12 @@ namespace orm {
 	{
 		std::string fullName = typeid(T).name();
 		size_t space = fullName.find_last_of(" ");
-		return fullName.substr(space + 1);
+        if(space != fullName.npos)
+		    fullName = fullName.substr(space + 1);
+        int i = 0;
+        while('0' <= fullName.at(i) && fullName.at(i) <= '9')
+            i++;
+        return fullName.substr(i);
 	}
 
 	template<typename T>
@@ -577,5 +682,42 @@ namespace orm {
 	{
 		conn.rollback();
 	}
+
+    template<typename T>
+    std::string Model<T>::getTableName()
+    {
+        return tableName.value_or(cppToDb(getClassName()));
+    }
+
+    template<typename T>
+    std::string Model<T>::getDefaultTableName()
+    {
+        return cppToDb(getClassName());
+    }
+
+    template<typename T>
+    FieldMeta& Model<T>::getMetadata(const std::string& name)
+    {
+        return metadata[columnToIndex[name]];
+    }
+
+    template<typename T>
+    Index& Model<T>::getIndex(const std::string& name)
+    {
+        return indices[name];
+    }
+
+    template<typename T>
+    std::vector<FieldMeta>& Model<T>::getAllMetadata(){return metadata;}
+
+    template<typename T>
+    std::unordered_map<std::string, Index>& Model<T>::getIndices(){return indices;}
+
+    template<typename T>
+    void Model<T>::saveModel()
+    {
+        DataLoader::Header header(getClassName(), tablenamePrev);
+        DataLoader::saveModel(fieldsPrev, indicesPrev, db, header);
+    }
 }
 #endif

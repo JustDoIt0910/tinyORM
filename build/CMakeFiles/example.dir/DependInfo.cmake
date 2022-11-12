@@ -11,9 +11,11 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../"
+  "../json-3.11.2/include"
   "../tinyorm/mysql4cpp"
-  "../tinyorm/mysql4cpp/mysql/include"
+  "/usr/include/mysql"
   "../tinyorm/mysql4cpp/spdlog/include"
+  "../tinyorm/json-3.11.2/include"
   )
 
 # Targets to which this target links.

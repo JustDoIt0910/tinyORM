@@ -7,6 +7,7 @@ using namespace std;
 class Result
 {
 public:
+    virtual ~Result() {}
 	virtual int getInt(int columnIndex) = 0;
 	virtual int getInt(const string& columnName) = 0;
 

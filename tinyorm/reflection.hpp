@@ -5,6 +5,7 @@
 #include "datatype.hpp"
 
 namespace orm::detail {
+    //这些宏是用来获取宏可变参数个数的，最多支持100个参数(实际用不到这么多)
 #define RSEQ_N() \
          99,98,97,96,95,94,93,92,91,90, \
          89,88,87,86,85,84,83,82,81,80, \
@@ -29,6 +30,7 @@ namespace orm::detail {
          _81, _82, _83, _84, _85, _86, _87, _88, _89, _90, \
          _91, _92, _93, _94, _95, _96, _97, _98, _99, N, ...) N
 #define GET_ARG_COUNT_INNER(...)    ARG_N(__VA_ARGS__)
+    //GET_ARG_COUNT获取可变参数个数
 #define GET_ARG_COUNT(...)          GET_ARG_COUNT_INNER(__VA_ARGS__, RSEQ_N())
 
 #define STR_LIST_1(arg)      #arg
@@ -53,6 +55,8 @@ namespace orm::detail {
 
 #define MACRO_CONCAT(a, b) a##_##b
 #define MAKE_STR_LIST(N, ...) MACRO_CONCAT(STR_LIST, N)(__VA_ARGS__)
+//MAKE_INITIAL_LIST(a, b, c) -> {"a", "b", "c"}
+//用来初始化vector
 #define MAKE_INITIAL_LIST(...) { MAKE_STR_LIST(GET_ARG_COUNT(__VA_ARGS__), __VA_ARGS__) }
 
 #define tags(...) ,#__VA_ARGS__
@@ -63,12 +67,14 @@ namespace orm::detail {
 	class static_instance {
 	public:
 		static_instance() {
+            //ins是模板成员，必须显式地"用"一下才会被初始化，否则仅仅被声明，不会被初始化
 			ins;
 		}
 	private:
 		static T ins;
 	};
 	template<typename T>
+	//利用静态成员变量的dynamic initialize过程，使得collector_xxx的构造函数被调用
 	T static_instance<T>::ins;
 }
 
@@ -87,6 +93,7 @@ namespace orm {
             return indices;
         }
 	protected:
+        //metadata, indices 分别保存列和索引的元信息
 		static std::map<std::string, orm::detail::Metadata> metadatas;
         static std::vector<Index> indices;
 	};
@@ -95,7 +102,8 @@ namespace orm {
     template<typename T>
     std::vector<orm::Index> Base<T>::indices;
 
-
+//column宏定义一个内部类collector_xxx，并继承static_instance，利用static_instance的静态成员初始化的过程，使得
+//collector_xxx的构造函数被调用，达到将元数据注册到Base中的目的
 #define column(name, type, ...) \
 type name; \
 class collector_##name :public orm::detail::static_instance<collector_##name> { \
@@ -116,11 +124,12 @@ public: \
 	} \
 }
 
+//和column宏原理相同，只不过索引元数据是注册到Base的indices中
 #define add_index(name, ...) \
     class collector_index_##name : public orm::detail::static_instance<collector_index_##name>{ \
     public: \
         collector_index_##name() { \
-            orm::Index ind(orm::Index::INDEX_TYPE_MUL); \
+            orm::Index ind(#name, orm::Index::INDEX_TYPE_MUL); \
             ind.columns = {#__VA_ARGS__}; \
             orm::Base<CT>::indices.push_back(ind);\
         }\
@@ -130,7 +139,7 @@ public: \
     class collector_unique_##name : public orm::detail::static_instance<collector_unique_##name>{ \
     public: \
         collector_unique_##name() { \
-            orm::Index ind(orm::Index::INDEX_TYPE_UNI); \
+            orm::Index ind(#name, orm::Index::INDEX_TYPE_UNI); \
             ind.columns = MAKE_INITIAL_LIST(__VA_ARGS__); \
             orm::Base<CT>::indices.push_back(ind);\
         }\
@@ -140,7 +149,7 @@ public: \
     class collector_primary_key : public orm::detail::static_instance<collector_primary_key>{ \
     public: \
         collector_primary_key() { \
-            orm::Index ind(orm::Index::INDEX_TYPE_PRI); \
+            orm::Index ind("", orm::Index::INDEX_TYPE_PRI); \
             ind.columns.push_back(#col); \
             orm::Base<CT>::indices.push_back(ind);\
         }\

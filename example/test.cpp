@@ -1,43 +1,60 @@
 #include <iostream>
-#include "tinyorm/mysql4cpp/common.h"
-#include "tinyorm/reflection.hpp"
 #include "user.h"
-#include "tinyorm/model.hpp"
+#include "role.h"
+#include "userRole.h"
 #include "tinyorm/db.hpp"
 #include "tinyorm/migrate.hpp"
 
+
 int main()
 {
-	orm::DB db("localhost", 3306, "root", "20010910cheng", "orm");
+    orm::DB db("localhost", 3306, "root", "20010910cheng", "orm");
+    db.AutoMigrate(User(), Role(), UserRole());
 
-	// User u;
-	// u.name = "Kobe";
-	// u.createTime = Timestamp::now();
-	// db.model<User>().Create(u);
+//    User user;
+//    user.name = "Durant";
+//    user.age = 34;
+//    user.createTime = Timestamp::now();
+//    db.model<User>().Create(user);
+//
+//    std::vector<User> users = {User("Jordan", 59, Timestamp::now()),
+//                               User("James", 38, Timestamp::now()),
+//                               User("Curry", 32, Timestamp::now()),
+//                               User("Irving", 30, Timestamp::now())};
+//
+//    db.model<User>().Create(users);
+//
+//    std::vector<Role> roles = {Role(1, "PG"), Role(2, "SG"),
+//                               Role(3, "SF"), Role(4, "PF"), Role(5, "C")};
+//    db.model<Role>().Create(roles);
+//
+//    std::vector<UserRole> urs = {UserRole(1, 2), UserRole(2, 2), UserRole(3, 3), UserRole(4, 1), UserRole(5, 1)};
+//    db.model<UserRole>().Create(urs);
 
-	// User user;
-	// db.model<User>().Select("name", "create_time").Where("id = ?", 2).First(user);
-	// printf("User{id = %d, name = %s, create_time = %s}\n", user.id, user.name.c_str(), user.createTime.toFormattedString().c_str());
-	
-	// std::vector<User> users = db.model<User>().Where("id = ?", 1).Or("name = ?", "Kobe").All();
-	// for (User& user : users)
-	// 	printf("User{id = %d, name = %s, create_time = %s}\n", user.id, user.name.c_str(), user.createTime.toFormattedString().c_str());
+//    User user;
+//
+//    db.model<User>().Select("name", "create_time").Where("id = ?", 2).First(user);
+//    printf("User{id = %d, name = %s, create_time = %s}\n", user.id, user.name.c_str(), user.createTime.toFormattedString().c_str());
+//
+//    std::vector<User> us = db.model<User>().Where("id = ?", 1).Or("name = ?", "Jordan").All();
+//    for(User& u: us)
+//        printf("User{id = %d, name = %s, create_time = %s}\n", u.id, u.name.c_str(), u.createTime.toFormattedString().c_str());
+//
+//    us = db.model<User>().Where("id < ?", 100).Page(1, 3).All();
+//    for(User& u: us)
+//        printf("User{id = %d, name = %s, create_time = %s}\n", u.id, u.name.c_str(), u.createTime.toFormattedString().c_str());
 
-	// std::vector<User> users = db.model<User>().Where("id < ?", 100).Page(1, 2).All();
-	// for (User& user : users)
-	// 	printf("User{id = %d, name = %s, create_time = %s}\n", user.id, user.name.c_str(), user.createTime.toFormattedString().c_str());
+//    int rowAffected = db.model<User>().Where("id = ?", 1).Update("name", "team_id", "Kevin Durant", 1);
+//    std::cout << rowAffected << " rows affected" << std::endl;
 
-	// int rowAffected = db.model<User>().Where("id = ?", 1).Update("name", "Jordan");
-	// std::cout << rowAffected << " rows affected" << std::endl;
+    std::string raw = "select u.name from "
+                      "user u left join user_role ur on u.id = ur.user_id "
+                      "left join role r on r.id = ur.role_id "
+                      "where r.role_name = ?";
+    std::vector<User> users = db.model<User>().Raw(raw, "SG").Fetch();
+    for(User& u: users)
+        printf("User{id = %d, name = %s, create_time = %s}\n", u.id, u.name.c_str(), u.createTime.toFormattedString().c_str());
 
-	std::string sql = "select u.name from                                   \
-                     user u left join user_role ur on u.id = ur.user_id   \
-                     left join role r on r.id = ur.role_id                \
-                     where r.role_name = ?";
-	std::vector<User> users = db.model<User>().Raw(sql, "pg").Fetch();
-  for (User& user : users)
-      printf("User{id = %d, name = %s, create_time = %s}\n", user.id, user.name.c_str(), user.createTime.toFormattedString().c_str());
 
-  db.model<User>().AutoMigrate();
-  return 0;
+return 0;
 }
