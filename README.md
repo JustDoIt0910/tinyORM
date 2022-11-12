@@ -41,10 +41,25 @@ int main()
 
     //Create
     ***************************************************************************************
-	// User u;
-	// u.name = "Kobe";
-	// u.createTime = Timestamp::now();
-	// db.model<User>().Create(u);
+//    User user;
+//    user.name = "Durant";
+//    user.age = 34;
+//    user.createTime = Timestamp::now();
+//    db.model<User>().Create(user);
+//
+//    std::vector<User> users = {User("Jordan", 59, Timestamp::now()),
+//                               User("James", 38, Timestamp::now()),
+//                               User("Curry", 32, Timestamp::now()),
+//                               User("Irving", 30, Timestamp::now())};
+//
+//    db.model<User>().Create(users);
+//
+//    std::vector<Role> roles = {Role(1, "PG"), Role(2, "SG"),
+//                               Role(3, "SF"), Role(4, "PF"), Role(5, "C")};
+//    db.model<Role>().Create(roles);
+//
+//    std::vector<UserRole> urs = {UserRole(1, 2), UserRole(2, 2), UserRole(3, 3), UserRole(4, 1), UserRole(5, 1)};
+//    db.model<UserRole>().Create(urs);
         
      //Select
     ***************************************************************************************
