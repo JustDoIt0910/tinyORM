@@ -1,8 +1,0 @@
-/home/zr/c_c++/tinyorm-main/cmake-build-debug/CMakeFiles/example.dir
-/home/zr/c_c++/tinyorm-main/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/zr/c_c++/tinyorm-main/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/zr/c_c++/tinyorm-main/cmake-build-debug/tinyorm/mysql4cpp/CMakeFiles/mysql4cpp.dir
-/home/zr/c_c++/tinyorm-main/cmake-build-debug/tinyorm/mysql4cpp/CMakeFiles/edit_cache.dir
-/home/zr/c_c++/tinyorm-main/cmake-build-debug/tinyorm/mysql4cpp/CMakeFiles/rebuild_cache.dir
-/home/zr/c_c++/tinyorm-main/cmake-build-debug/tinyorm/json-3.11.2/CMakeFiles/edit_cache.dir
-/home/zr/c_c++/tinyorm-main/cmake-build-debug/tinyorm/json-3.11.2/CMakeFiles/rebuild_cache.dir

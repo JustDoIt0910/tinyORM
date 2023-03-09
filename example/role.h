@@ -3,7 +3,7 @@
 //
 
 #pragma once
-#include "tinyorm/reflection.hpp"
+#include "tinyorm/reflection.h"
 
 entity(Role) {
     tableName(role);

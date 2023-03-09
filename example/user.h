@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-#include "tinyorm/reflection.hpp"
+#include "tinyorm/reflection.h"
 #include "tinyorm/mysql4cpp/timestamp.h"
 
 entity(User) {

@@ -16,7 +16,6 @@ class SqlConn
 {
 public:
 	SqlConn();
-	//SqlConn(const SqlConn&);
 	SqlConn(MYSQL* mysql, ConnectionPool* pool);
 	SqlConn(SqlConn&& conn);
 	SqlConn& operator=(SqlConn&& conn);

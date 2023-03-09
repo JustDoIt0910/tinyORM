@@ -2,9 +2,8 @@
 #include "user.h"
 #include "role.h"
 #include "userRole.h"
-#include "tinyorm/db.hpp"
-#include "tinyorm/migrate.hpp"
-
+#include "tinyorm/db.h"
+#include "tinyorm/model.h"
 
 int main()
 {

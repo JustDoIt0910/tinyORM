@@ -1,5 +1,5 @@
 #pragma once
-#include "tinyorm/reflection.hpp"
+#include "tinyorm/reflection.h"
 #include <string>
 
 entity(Team) {

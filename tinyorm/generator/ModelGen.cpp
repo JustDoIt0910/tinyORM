@@ -8,8 +8,8 @@
 //#include "dataloader.hpp"
 //#include "db.hpp"
 //#include "mysql4cpp/common.h"
-#include "../dataloader.hpp"
-#include "../db.hpp"
+#include "../dataloader.h"
+#include "../db.h"
 #include "common.h"
 
 #include <vector>

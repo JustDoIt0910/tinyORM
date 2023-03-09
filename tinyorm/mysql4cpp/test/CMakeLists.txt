@@ -11,7 +11,7 @@ set(MYSQL_INCLUDE_DIR /usr/include/mysql)
 set(MYSQL4CPP_INCLUDE_DIR ..)
 set(SPDLOG_INCLUDE_DIR ../spdlog/include)
 
-set(LIBMYSQL4CPP ../../../build/tinyorm/mysql4cpp)
+set(LIBMYSQL4CPP ../../../../build/tinyorm/mysql4cpp)
 set(LIBSPDLOG ../spdlog/lib)
 
 aux_source_directory(. DIR_SRC)
