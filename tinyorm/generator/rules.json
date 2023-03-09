@@ -1,0 +1,49 @@
+{
+  "mysql": {
+    "same_types": {
+      "int": ["integer", "int", "int(11)"],
+      "tin": ["tinyint", "tinyint(4)"],
+      "sma": ["smallint", "smallint(6)"],
+      "med": ["mediumint", "mediumint(9)"],
+      "big": ["bigint", "bigint(20)"],
+      "yea": ["year", "year(4)"]
+    },
+    "default_types": {
+      "bool": "tinyint",
+      "short": "smallint",
+      "int": "integer",
+      "long long": "bigint",
+      "float": "float",
+      "double": "double",
+      "char": "char",
+      "string": "varchar(255)",
+      "std::string": "varchar(255)",
+      "Timestamp": "timestamp"
+    },
+    "db_cpp_types": {
+      "timestamp": "Timestamp",
+      "datetime": "Timestamp",
+      "time": "Timestamp",
+      "date": "Timestamp",
+      "year": "Timestamp",
+      "tinytext": "std::string",
+      "mediumtext": "std::string",
+      "text": "std::string",
+      "longtext": "std::string",
+      "tinyblob": "std::string",
+      "mediumblob": "std::string",
+      "blob": "std::string",
+      "longblob": "std::string",
+      "varchar": "std::string",
+      "int": "int",
+      "mediumint": "int",
+      "tinyint": "bool",
+      "smallint": "short",
+      "bigint": "long long",
+      "float": "float",
+      "double": "double",
+      "decimal": "double",
+      "char": "char"
+    }
+  }
+}

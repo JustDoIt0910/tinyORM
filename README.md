@@ -88,7 +88,7 @@ make
 ```c++
 #pragma once
 #include <string>
-#include "tinyorm/reflection.hpp"
+#include "tinyorm/reflection.h"
 #include "tinyorm/mysql4cpp/timestamp.h"
 
 //定义表结构
@@ -105,11 +105,11 @@ entity(User) {
 
 ```c++
 #include <iostream>
-#include "tinyorm/mysql4cpp/common.h"
-#include "tinyorm/reflection.hpp"
 #include "user.h"
-#include "tinyorm/model.hpp"
-#include "tinyorm/db.hpp"
+#include "role.h"
+#include "userRole.h"
+#include "tinyorm/model.h"
+#include "tinyorm/db.h"
 
 int main()
 {

@@ -2,15 +2,9 @@
 // Created by zr on 22-11-10.
 //
 
-#include "spdlog/spdlog.h"
 #include "cmdline/cmdline.h"
-
-//#include "dataloader.hpp"
-//#include "db.hpp"
-//#include "mysql4cpp/common.h"
 #include "../dataloader.h"
 #include "../db.h"
-#include "common.h"
 
 #include <vector>
 #include <fstream>
@@ -30,7 +24,7 @@ bool gen(const std::string& table, SqlConn& conn)
         return false;
     std::ofstream ofs(dir + "/" + orm::dbToCpp(table) + ".h");
     ofs << "#pragma once\n";
-    ofs << "#include \"tinyorm/reflection.hpp\"\n";
+    ofs << "#include \"tinyorm/reflection.h\"\n";
     std::unordered_set<std::string> s;
     for(const orm::FieldMeta& f: fields)
         s.insert(f.cppType);

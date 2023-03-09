@@ -1,3 +1,0 @@
-/home/zr/c_c++/tinyorm-main/tinyorm/mysql4cpp/test/CMakeFiles/rebuild_cache.dir
-/home/zr/c_c++/tinyorm-main/tinyorm/mysql4cpp/test/CMakeFiles/test.dir
-/home/zr/c_c++/tinyorm-main/tinyorm/mysql4cpp/test/CMakeFiles/edit_cache.dir
